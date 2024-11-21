@@ -1,0 +1,116 @@
+[gd_scene load_steps=4 format=3 uid="uid://df73qm0v7k00e"]
+
+[ext_resource type="Script" path="res://scripts/game_manager.gd" id="1_5e4mr"]
+[ext_resource type="Script" path="res://scripts/pause_menu.gd" id="1_wq4a7"]
+[ext_resource type="Script" path="res://scripts/volume.gd" id="2_wn8gr"]
+
+[node name="PauseMenu" type="Control" node_paths=PackedStringArray("game_manager")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wq4a7")
+game_manager = NodePath("gameManager")
+
+[node name="CanvasGroup" type="CanvasGroup" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasGroup"]
+offset_left = -2.0
+offset_top = -3.0
+offset_right = 1162.0
+offset_bottom = 659.0
+color = Color(0, 0, 0, 0.776471)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasGroup"]
+offset_top = 221.0
+offset_right = 1153.0
+offset_bottom = 650.0
+
+[node name="Label" type="Label" parent="CanvasGroup/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "~~ Pause~~"
+horizontal_alignment = 1
+
+[node name="optionsButton" type="Button" parent="CanvasGroup/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Options"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasGroup/VBoxContainer"]
+visible = false
+layout_mode = 2
+
+[node name="master" type="VBoxContainer" parent="CanvasGroup/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Label" type="Label" parent="CanvasGroup/VBoxContainer/VBoxContainer/master"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Game Volume: "
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="HSlider" type="HSlider" parent="CanvasGroup/VBoxContainer/VBoxContainer/master"]
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 1.0
+step = 0.001
+value = 1.0
+script = ExtResource("2_wn8gr")
+bus_name = "Master"
+
+[node name="music" type="VBoxContainer" parent="CanvasGroup/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Label" type="Label" parent="CanvasGroup/VBoxContainer/VBoxContainer/music"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Music Volume: "
+horizontal_alignment = 2
+
+[node name="HSlider" type="HSlider" parent="CanvasGroup/VBoxContainer/VBoxContainer/music"]
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 1.0
+step = 0.001
+value = 1.0
+script = ExtResource("2_wn8gr")
+bus_name = "Music"
+
+[node name="sfx" type="VBoxContainer" parent="CanvasGroup/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Label" type="Label" parent="CanvasGroup/VBoxContainer/VBoxContainer/sfx"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "   SFX Volume:   "
+horizontal_alignment = 2
+
+[node name="HSlider" type="HSlider" parent="CanvasGroup/VBoxContainer/VBoxContainer/sfx"]
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 1.0
+step = 0.001
+value = 1.0
+script = ExtResource("2_wn8gr")
+bus_name = "SFX"
+
+[node name="backButton" type="Button" parent="CanvasGroup/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Back"
+
+[node name="gameManager" type="Node3D" parent="."]
+script = ExtResource("1_5e4mr")
+
+[connection signal="pressed" from="CanvasGroup/VBoxContainer/optionsButton" to="." method="_on_button_pressed"]
+[connection signal="drag_ended" from="CanvasGroup/VBoxContainer/VBoxContainer/master/HSlider" to="CanvasGroup/VBoxContainer/VBoxContainer/master/HSlider" method="_on_drag_ended"]
+[connection signal="drag_ended" from="CanvasGroup/VBoxContainer/VBoxContainer/music/HSlider" to="CanvasGroup/VBoxContainer/VBoxContainer/music/HSlider" method="_on_drag_ended"]
+[connection signal="drag_ended" from="CanvasGroup/VBoxContainer/VBoxContainer/sfx/HSlider" to="CanvasGroup/VBoxContainer/VBoxContainer/sfx/HSlider" method="_on_drag_ended"]
+[connection signal="pressed" from="CanvasGroup/VBoxContainer/VBoxContainer/backButton" to="." method="_on_back_button_pressed"]

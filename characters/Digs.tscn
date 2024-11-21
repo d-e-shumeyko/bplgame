@@ -1,0 +1,86 @@
+[gd_scene load_steps=9 format=3 uid="uid://cp3dflmjqtk68"]
+
+[ext_resource type="PackedScene" uid="uid://btgmr015wglfx" path="res://characters/bear_ranimated.tscn" id="2_gihvx"]
+[ext_resource type="Script" path="res://scripts/enemy.gd" id="2_r410r"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0srjf"]
+size = Vector3(1.95215, 1, 0.994476)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_5hk6l"]
+radius = 8.01514
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_5q7i1"]
+radius = 3.98014
+
+[sub_resource type="PrismMesh" id="PrismMesh_jblp8"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_gukmg"]
+data = PackedVector3Array(0, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0, 0.5, 0.5, 0, 0.5, -0.5, 0.5, -0.5, 0.5, 0, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0, 0.5, -0.5, 0, 0.5, 0.5, -0.5, -0.5, -0.5, 0, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_nrhbs"]
+radius = 0.314112
+height = 1.65986
+
+[node name="digs" type="CharacterBody3D"]
+script = ExtResource("2_r410r")
+
+[node name="BEARanimated" parent="." instance=ExtResource("2_gihvx")]
+transform = Transform3D(-0.15, 0, -2.26494e-08, 0, 0.15, 0, 2.26494e-08, 0, -0.15, 0, 0, 0)
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+path_height_offset = 0.5
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="areas" type="Node3D" parent="."]
+
+[node name="Area3D" type="Area3D" parent="areas"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2)
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="areas/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00341797, 0, 1.50069)
+shape = SubResource("BoxShape3D_0srjf")
+
+[node name="longArea" type="Area3D" parent="areas"]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="areas/longArea"]
+shape = SubResource("SphereShape3D_5hk6l")
+
+[node name="shortArea" type="Area3D" parent="areas"]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="areas/shortArea"]
+transform = Transform3D(1.00379, 0, 0, 0, 1.00379, 0, 0, 0, 1.00379, 0, 0, 0)
+shape = SubResource("SphereShape3D_5q7i1")
+
+[node name="coneArea" type="Area3D" parent="areas"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, -0.012338)
+collision_layer = 0
+collision_mask = 4
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="areas/coneArea"]
+transform = Transform3D(6.61135, 0, 0, 0, -2.77528e-07, 2.8585, 0, -6.34911, -1.24949e-07, 0.0144253, 1.98537, 4.07155)
+visible = false
+mesh = SubResource("PrismMesh_jblp8")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="areas/coneArea"]
+transform = Transform3D(6.5, 0, 0, 0, -2.84124e-07, 6.5, 0, -6.5, -2.84124e-07, 0.0144253, 3.26924, 4.0389)
+shape = SubResource("ConcavePolygonShape3D_gukmg")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.927112, 0)
+shape = SubResource("CapsuleShape3D_nrhbs")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="areas/Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="areas/Area3D" to="." method="_on_area_3d_body_exited"]
+[connection signal="body_entered" from="areas/longArea" to="." method="_on_long_area_body_entered"]
+[connection signal="body_exited" from="areas/longArea" to="." method="_on_long_area_body_exited"]
+[connection signal="body_entered" from="areas/shortArea" to="." method="_on_short_area_body_entered"]
+[connection signal="body_entered" from="areas/coneArea" to="." method="_on_cone_area_body_entered"]

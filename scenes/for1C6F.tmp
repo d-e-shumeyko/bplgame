@@ -1,0 +1,238 @@
+[gd_scene load_steps=13 format=3 uid="uid://xhqx3qvaqx5l"]
+
+[ext_resource type="Script" path="res://scripts/world.gd" id="1_k5fby"]
+[ext_resource type="PackedScene" uid="uid://c3rwxpcahhhup" path="res://characters/player.tscn" id="1_rlnd4"]
+[ext_resource type="PackedScene" uid="uid://ba4fap6ncg8cx" path="res://Assets/tree.glb" id="2_6uwir"]
+[ext_resource type="MeshLibrary" uid="uid://ck0uwkwlt0vg8" path="res://Tilests/forest.tres" id="2_oowir"]
+[ext_resource type="Script" path="res://scripts/interactable.gd" id="3_haar6"]
+[ext_resource type="PackedScene" uid="uid://df73qm0v7k00e" path="res://scenes/pauseMenu.tscn" id="4_2qhu8"]
+[ext_resource type="PackedScene" uid="uid://cmwyfrtnig48g" path="res://characters/enemy.tscn" id="6_7ebyp"]
+
+[sub_resource type="Environment" id="Environment_myiio"]
+ambient_light_color = Color(0.807586, 0.782132, 0.659809, 1)
+ambient_light_energy = 16.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_63se1"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_772tk"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_d6my4"]
+height = 19.4906
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_4jg0a"]
+vertices = PackedVector3Array(-59.5, 0.9, -59.5, -59.5, 0.9, 59.5, 59.5, 0.9, 59.5, 59.5, 0.9, -59.5)
+polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
+
+[node name="Node3D" type="Node3D" node_paths=PackedStringArray("player")]
+process_mode = 3
+script = ExtResource("1_k5fby")
+player = NodePath("Node/CharacterBody3D")
+
+[node name="Node" type="Node" parent="."]
+process_mode = 1
+
+[node name="CharacterBody3D" parent="Node" instance=ExtResource("1_rlnd4")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.419, 0)
+collision_layer = 7
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Node"]
+environment = SubResource("Environment_myiio")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Node/WorldEnvironment"]
+transform = Transform3D(1, 0, 0, 0, -0.00335101, 0.999994, 0, -0.999994, -0.00335101, 0, 51.932, 0)
+shadow_enabled = true
+shadow_opacity = 0.76
+
+[node name="decorations" type="Node" parent="Node"]
+
+[node name="cube" type="Node3D" parent="Node/decorations"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.402076, 3.26695)
+visible = false
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Node/decorations/cube"]
+mesh = SubResource("BoxMesh_63se1")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Node/decorations/cube"]
+collision_layer = 3
+script = ExtResource("3_haar6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node/decorations/cube/StaticBody3D"]
+shape = SubResource("BoxShape3D_772tk")
+
+[node name="trees" type="Node" parent="Node/decorations"]
+
+[node name="tree small" parent="Node/decorations/trees" instance=ExtResource("2_6uwir")]
+transform = Transform3D(0.516, 0, 0, 0, 0.516, 0, 0, 0, 0.516, 14.2643, -0.11083, -8.25265)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Node/decorations/trees/tree small"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node/decorations/trees/tree small/StaticBody3D"]
+shape = SubResource("CylinderShape3D_d6my4")
+
+[node name="tree small2" parent="Node/decorations/trees" instance=ExtResource("2_6uwir")]
+transform = Transform3D(0.516, 0, 0, 0, 0.516, 0, 0, 0, 0.516, -8.16374, -0.11083, -10.7653)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Node/decorations/trees/tree small2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node/decorations/trees/tree small2/StaticBody3D"]
+shape = SubResource("CylinderShape3D_d6my4")
+
+[node name="tree small3" parent="Node/decorations/trees" instance=ExtResource("2_6uwir")]
+transform = Transform3D(0.516, 0, 0, 0, 0.516, 0, 0, 0, 0.516, 3.28295, -0.11083, -10.1139)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Node/decorations/trees/tree small3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node/decorations/trees/tree small3/StaticBody3D"]
+shape = SubResource("CylinderShape3D_d6my4")
+
+[node name="tree small4" parent="Node/decorations/trees" instance=ExtResource("2_6uwir")]
+transform = Transform3D(0.516, 0, 0, 0, 0.516, 0, 0, 0, 0.516, -3.60367, -0.11083, 3.19404)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Node/decorations/trees/tree small4"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node/decorations/trees/tree small4/StaticBody3D"]
+shape = SubResource("CylinderShape3D_d6my4")
+
+[node name="tree small5" parent="Node/decorations/trees" instance=ExtResource("2_6uwir")]
+transform = Transform3D(0.516, 0, 0, 0, 0.516, 0, 0, 0, 0.516, 5.79564, -0.11083, -4.62321)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Node/decorations/trees/tree small5"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node/decorations/trees/tree small5/StaticBody3D"]
+shape = SubResource("CylinderShape3D_d6my4")
+
+[node name="tree med" parent="Node/decorations/trees" instance=ExtResource("2_6uwir")]
+transform = Transform3D(0.774, 0, 0, 0, 0.774, 0, 0, 0, 0.774, 5.31167, -0.118004, 1.7981)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Node/decorations/trees/tree med"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node/decorations/trees/tree med/StaticBody3D"]
+shape = SubResource("CylinderShape3D_d6my4")
+
+[node name="tree med2" parent="Node/decorations/trees" instance=ExtResource("2_6uwir")]
+transform = Transform3D(0.774, 0, 0, 0, 0.774, 0, 0, 0, 0.774, 8.28968, -0.118004, -11.5098)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Node/decorations/trees/tree med2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node/decorations/trees/tree med2/StaticBody3D"]
+shape = SubResource("CylinderShape3D_d6my4")
+
+[node name="tree med3" parent="Node/decorations/trees" instance=ExtResource("2_6uwir")]
+transform = Transform3D(0.774, 0, 0, 0, 0.774, 0, 0, 0, 0.774, -2.97088, -0.118004, -12.9058)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Node/decorations/trees/tree med3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node/decorations/trees/tree med3/StaticBody3D"]
+shape = SubResource("CylinderShape3D_d6my4")
+
+[node name="tree med4" parent="Node/decorations/trees" instance=ExtResource("2_6uwir")]
+transform = Transform3D(0.774, 0, 0, 0, 0.774, 0, 0, 0, 0.774, 14.4318, -0.118004, -3.04114)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Node/decorations/trees/tree med4"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node/decorations/trees/tree med4/StaticBody3D"]
+shape = SubResource("CylinderShape3D_d6my4")
+
+[node name="tree med5" parent="Node/decorations/trees" instance=ExtResource("2_6uwir")]
+transform = Transform3D(0.774, 0, 0, 0, 0.774, 0, 0, 0, 0.774, -8.83383, -0.118004, -1.9244)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Node/decorations/trees/tree med5"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node/decorations/trees/tree med5/StaticBody3D"]
+shape = SubResource("CylinderShape3D_d6my4")
+
+[node name="tree large" parent="Node/decorations/trees" instance=ExtResource("2_6uwir")]
+transform = Transform3D(1.036, 0, 0, 0, 1.036, 0, 0, 0, 1.036, 0.459476, -0.11083, 9.24311)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Node/decorations/trees/tree large"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node/decorations/trees/tree large/StaticBody3D"]
+shape = SubResource("CylinderShape3D_d6my4")
+
+[node name="tree large2" parent="Node/decorations/trees" instance=ExtResource("2_6uwir")]
+transform = Transform3D(1.036, 0, 0, 0, 1.036, 0, 0, 0, 1.036, -2.51852, -0.11083, -6.01915)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Node/decorations/trees/tree large2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node/decorations/trees/tree large2/StaticBody3D"]
+shape = SubResource("CylinderShape3D_d6my4")
+
+[node name="tree large3" parent="Node/decorations/trees" instance=ExtResource("2_6uwir")]
+transform = Transform3D(1.036, 0, 0, 0, 1.036, 0, 0, 0, 1.036, -14.2444, -0.11083, -10.4861)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Node/decorations/trees/tree large3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node/decorations/trees/tree large3/StaticBody3D"]
+shape = SubResource("CylinderShape3D_d6my4")
+
+[node name="tree large4" parent="Node/decorations/trees" instance=ExtResource("2_6uwir")]
+transform = Transform3D(1.036, 0, 0, 0, 1.036, 0, 0, 0, 1.036, 12.0923, -0.11083, 5.98592)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Node/decorations/trees/tree large4"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node/decorations/trees/tree large4/StaticBody3D"]
+shape = SubResource("CylinderShape3D_d6my4")
+
+[node name="tree large5" parent="Node/decorations/trees" instance=ExtResource("2_6uwir")]
+transform = Transform3D(1.036, 0, 0, 0, 1.036, 0, 0, 0, 1.036, -12.7554, -0.11083, 5.37168)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Node/decorations/trees/tree large5"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node/decorations/trees/tree large5/StaticBody3D"]
+shape = SubResource("CylinderShape3D_d6my4")
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="Node"]
+navigation_mesh = SubResource("NavigationMesh_4jg0a")
+
+[node name="GridMap" type="GridMap" parent="Node/NavigationRegion3D"]
+mesh_library = ExtResource("2_oowir")
+cell_size = Vector3(12, 0.1, 12)
+cell_center_y = false
+cell_scale = 6.0
+data = {
+"cells": PackedInt32Array(-65536, 0, 0, -65536, 65535, 0, -1, 65535, 0, -1, 0, 0, -65535, 0, 0, -65535, 65535, 0, -65535, 65534, 0, -65536, 65534, 0, -1, 65534, 0, -2, 65534, 0, -2, 65535, 0, -2, 0, 0, -2, 1, 0, -1, 1, 0, -65536, 1, 0, -65535, 1, 0, -65534, 1, 0, -65534, 0, 0, -65534, 65535, 0, -65534, 65534, 0, -3, 65533, 0, -2, 65533, 0, -1, 65533, 0, -65536, 65533, 0, -65535, 65533, 0, -65534, 65533, 0, -65533, 65533, 0, -65533, 65534, 0, -65533, 65535, 0, -65533, 0, 0, -65533, 1, 0, -65533, 2, 0, -65534, 2, 0, -65535, 2, 0, -65536, 2, 0, -1, 2, 0, -2, 2, 0, -3, 2, 0, -3, 1, 0, -3, 0, 0, -3, 65535, 0, -3, 65534, 0, -4, 65533, 0, -4, 65534, 0, -4, 65535, 0, -4, 0, 0, -4, 1, 0, -4, 2, 0, -4, 3, 0, -3, 3, 0, -2, 3, 0, -1, 3, 0, -65536, 3, 0, -65535, 3, 0, -65534, 3, 0, -65533, 3, 0, -65532, 3, 0, -65532, 2, 0, -65532, 1, 0, -65532, 0, 0, -65532, 65535, 0, -65532, 65534, 0, -65532, 65533, 0, -65532, 65532, 0, -65533, 65532, 0, -65534, 65532, 0, -65535, 65532, 0, -65536, 65532, 0, -1, 65532, 0, -2, 65532, 0, -3, 65532, 0, -4, 65532, 0, -5, 65532, 0, -5, 65533, 0, -5, 65534, 0, -5, 65535, 0, -5, 0, 0, -5, 1, 0, -5, 2, 0, -5, 3, 0, -5, 4, 0, -4, 4, 0, -3, 4, 0, -2, 4, 0, -1, 4, 0, -65536, 4, 0, -65535, 4, 0, -65534, 4, 0, -65533, 4, 0, -65532, 4, 0, -5, 65531, 0, -4, 65531, 0, -3, 65531, 0, -2, 65531, 0, -1, 65531, 0, -65536, 65531, 0, -65535, 65531, 0, -65534, 65531, 0, -65533, 65531, 0, -65532, 65531, 0)
+}
+metadata/_editor_floor_ = Vector3(0, -1, 0)
+
+[node name="enemy" parent="Node" node_paths=PackedStringArray("player") instance=ExtResource("6_7ebyp")]
+transform = Transform3D(0.125, 0, 0, 0, 0.125, 0, 0, 0, 0.125, 0, 0.2, -11.1758)
+speed = 3.0
+player = NodePath("../CharacterBody3D")
+
+[node name="waypoints" type="Node" parent="Node"]
+
+[node name="Marker3D" type="Marker3D" parent="Node/waypoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.3854, 0, -5.95318)
+
+[node name="Marker3D2" type="Marker3D" parent="Node/waypoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.02668, 0, 8.47032)
+
+[node name="Marker3D3" type="Marker3D" parent="Node/waypoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.8372, 0, -3.04546)
+
+[node name="Marker3D4" type="Marker3D" parent="Node/waypoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.225, 0, -3.0138)
+
+[node name="Marker3D5" type="Marker3D" parent="Node/waypoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.2277, 0, -11.4677)
+
+[node name="Marker3D6" type="Marker3D" parent="Node/waypoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.6433, 0, 8.09974)
+
+[node name="Marker3D7" type="Marker3D" parent="Node/waypoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.6208, 0, 5.40843)
+
+[node name="Marker3D8" type="Marker3D" parent="Node/waypoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.37145, 0, -1.87395)
+
+[node name="Marker3D9" type="Marker3D" parent="Node/waypoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.36215, 0, 8.35304)
+
+[node name="Marker3D10" type="Marker3D" parent="Node/waypoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.91093, 0, -13.0825)
+
+[node name="empty" type="Marker3D" parent="Node/waypoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54, 0, -55)
+
+[node name="PauseMenu" parent="." instance=ExtResource("4_2qhu8")]
+process_mode = 3

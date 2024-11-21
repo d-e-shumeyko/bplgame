@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://caga8intx4f4v"]
+
+[ext_resource type="PackedScene" uid="uid://16qr0ek3ct8j" path="res://Assets/Lamp.glb" id="1_t7ne0"]
+
+[node name="Lamp" instance=ExtResource("1_t7ne0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000549316, 0.003479, -0.00146484)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.377228, 0)
+omni_range = 1.31808
+
+[node name="SpotLight3D" type="SpotLight3D" parent="." index="2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)

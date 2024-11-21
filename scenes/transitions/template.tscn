@@ -1,0 +1,49 @@
+[gd_scene load_steps=5 format=3 uid="uid://dfyfkkhpavexo"]
+
+[ext_resource type="PackedScene" uid="uid://cag72fnh16vms" path="res://scenes/cake.tscn" id="1_pagt6"]
+[ext_resource type="PackedScene" uid="uid://csl7uuwvemmxt" path="res://scenes/can.tscn" id="1_tbsd6"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g5p56"]
+albedo_color = Color(0, 0, 0, 1)
+metallic_specular = 0.0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_p1nsm"]
+material = SubResource("StandardMaterial3D_g5p56")
+
+[node name="Node3D" type="Node3D"]
+
+[node name="can" parent="." instance=ExtResource("1_tbsd6")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, -0.489063, 0.319396)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+mesh = SubResource("PlaneMesh_p1nsm")
+
+[node name="cake" parent="." instance=ExtResource("1_pagt6")]
+transform = Transform3D(0.425, 0, 0, 0, 0.425, 0, 0, 0, 0.425, 0, -0.442, 1.627)
+visible = false
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8.05444)
+projection = 1
+fov = 66.4
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.36, 0)
+light_energy = 16.0
+light_indirect_energy = 16.0
+spot_range = 11.7066
+spot_angle = 17.5632
+
+[node name="CanvasGroup" type="CanvasGroup" parent="."]
+
+[node name="BoxContainer" type="BoxContainer" parent="CanvasGroup"]
+offset_right = 1157.0
+offset_bottom = 320.0
+
+[node name="Label" type="Label" parent="CanvasGroup/BoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+text = "text
+"
+horizontal_alignment = 1

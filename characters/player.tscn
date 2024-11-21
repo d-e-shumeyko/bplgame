@@ -1,0 +1,48 @@
+[gd_scene load_steps=5 format=3 uid="uid://c3rwxpcahhhup"]
+
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_liauy"]
+[ext_resource type="PackedScene" uid="uid://bqa7qgfmddx1i" path="res://scenes/interactRay.tscn" id="2_a7uee"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_uvwr0"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_qxybx"]
+
+[node name="CharacterBody3D" type="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+collision_layer = 13
+collision_mask = 3
+script = ExtResource("1_liauy")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_uvwr0")
+
+[node name="Node3D" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D"]
+mesh = SubResource("CapsuleMesh_qxybx")
+
+[node name="head" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.507483, 0)
+
+[node name="Camera3D" type="Camera3D" parent="head"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.327409)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="head/Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 0.994694, -0.102879, 0, 0.102879, 0.994694, 0, -0.207591, 0)
+visible = false
+spot_range = 11.8046
+spot_angle = 23.3332
+
+[node name="RayCast3D" parent="head/Camera3D" instance=ExtResource("2_a7uee")]
+enabled = true
+
+[node name="CanvasGroup" type="CanvasGroup" parent="."]
+
+[node name="CenterContainer" type="CenterContainer" parent="CanvasGroup"]
+offset_right = 1150.0
+offset_bottom = 652.0
+
+[node name="Label" type="Label" parent="CanvasGroup/CenterContainer"]
+layout_mode = 2
+text = "."
+horizontal_alignment = 1

@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://c8id5c5fea70v"]
+
+[ext_resource type="Script" path="res://scripts/tom.gd" id="1_h8h8j"]
+[ext_resource type="PackedScene" uid="uid://dnd7spnyg744e" path="res://Assets/Npc.glb" id="2_l14ax"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7l8sa"]
+radius = 0.776766
+height = 2.55553
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_w0upe"]
+
+[node name="CharacterBody3D" type="CharacterBody3D"]
+script = ExtResource("1_h8h8j")
+
+[node name="Npc" parent="." instance=ExtResource("2_l14ax")]
+transform = Transform3D(0.35, 0, 0, 0, 0.35, 0, 0, 0, 0.35, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.40732, 0)
+shape = SubResource("CapsuleShape3D_7l8sa")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+debug_enabled = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+visible = false
+mesh = SubResource("CapsuleMesh_w0upe")

@@ -1,0 +1,63 @@
+[gd_scene load_steps=7 format=3 uid="uid://csl7uuwvemmxt"]
+
+[ext_resource type="PackedScene" uid="uid://q605efe5o256" path="res://Assets/can.glb" id="1_o7cbi"]
+[ext_resource type="Script" path="res://scripts/can.gd" id="2_0uusk"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1y5wc"]
+size = Vector3(0.573907, 0.956482, 0.536711)
+
+[sub_resource type="Animation" id="Animation_jrm6w"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("can:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.174533, -6.35277e-09, 0.174533)]
+}
+
+[sub_resource type="Animation" id="Animation_dbhmf"]
+resource_name = "new_animation"
+length = 10.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("can:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.174533, -6.35277e-09, 0.174533), Vector3(0.174533, -6.26573, 0.174533)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0iir8"]
+_data = {
+"RESET": SubResource("Animation_jrm6w"),
+"turn": SubResource("Animation_dbhmf")
+}
+
+[node name="Node3D" type="Node3D"]
+
+[node name="can" parent="." instance=ExtResource("1_o7cbi")]
+transform = Transform3D(0.984808, -0.173648, -6.25625e-09, 0.17101, 0.969846, -0.173648, 0.0301537, 0.17101, 0.984808, 0, 0.0565787, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="can"]
+transform = Transform3D(0.984808, 0.173648, 0, -0.173648, 0.984808, 0, 0, 0, 1, -0.00768667, -0.0435933, 0)
+script = ExtResource("2_0uusk")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="can/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0508609, 0.477692, 0.00282347)
+shape = SubResource("BoxShape3D_1y5wc")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_0iir8")
+}
