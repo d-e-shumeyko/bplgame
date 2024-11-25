@@ -19,7 +19,7 @@ points = PackedVector3Array(0, 0.5, 0.5, 0.5, -0.5, 0.5, 0, 0.5, -0.5, -0.5, -0.
 size = Vector3(15.9865, 4.42944, 16.3715)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_wt6p7"]
-size = Vector3(1, 4.42395, 2.23071)
+size = Vector3(3.24609, 4.42395, 1.76617)
 
 [node name="CharacterBody3D" type="CharacterBody3D"]
 axis_lock_angular_y = true
@@ -68,12 +68,13 @@ collision_layer = 0
 collision_mask = 4
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="grabArea"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.20953, -1.08435)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.103516, 2.20953, -0.852082)
 shape = SubResource("BoxShape3D_wt6p7")
 
 [node name="Timer" type="Timer" parent="."]
 
 [node name="tom2" parent="." instance=ExtResource("2_lgm0n")]
+unique_name_in_owner = true
 transform = Transform3D(0.35, 0, 0, 0, 0.35, 0, 0, 0, 0.35, 0, 0, 0)
 
 [connection signal="navigation_finished" from="NavigationAgent3D" to="." method="_on_navigation_agent_3d_navigation_finished"]

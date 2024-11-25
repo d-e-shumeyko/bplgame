@@ -1,10 +1,11 @@
-[gd_scene load_steps=22 format=3 uid="uid://bacocd65kfhjl"]
+[gd_scene load_steps=23 format=3 uid="uid://bacocd65kfhjl"]
 
 [ext_resource type="PackedScene" uid="uid://df73qm0v7k00e" path="res://scenes/pauseMenu.tscn" id="1_ctdmj"]
 [ext_resource type="PackedScene" uid="uid://c3rwxpcahhhup" path="res://characters/player.tscn" id="1_jx6ho"]
 [ext_resource type="MeshLibrary" uid="uid://c00qmdsj4ob5u" path="res://Tilests/LocRed.tres" id="1_wcq62"]
 [ext_resource type="PackedScene" uid="uid://cd8p48r3j6oso" path="res://Tilests/tupperware.tscn" id="2_mmkp0"]
 [ext_resource type="PackedScene" uid="uid://djaqxhqf4eui0" path="res://scenes/decorations/doorEntrance.tscn" id="3_l57u8"]
+[ext_resource type="PackedScene" uid="uid://eqn66u48s451" path="res://characters/texBody.tscn" id="3_mvviy"]
 [ext_resource type="PackedScene" uid="uid://ri6rcok7b30f" path="res://scenes/decorations/door_openable.tscn" id="4_3nrvl"]
 [ext_resource type="PackedScene" uid="uid://c2ro6mnwdxe1b" path="res://scenes/decorations/animatedBookcase.tscn" id="5_rj6f4"]
 [ext_resource type="PackedScene" uid="uid://bjjtjfdbe8r0w" path="res://Assets/GUNLIBRARY.glb" id="6_u0w4p"]
@@ -76,6 +77,12 @@ process_mode = 1
 
 [node name="GOAT" parent="Node/characters" instance=ExtResource("11_eof6r")]
 transform = Transform3D(-0.186129, 0, 0.464065, 0, 0.5, 0, -0.464065, 0, -0.186129, -10.4783, 8.9407e-08, -12.2456)
+
+[node name="Texbody" parent="Node/characters" instance=ExtResource("3_mvviy")]
+transform = Transform3D(0.204778, 0, -0.143408, 0, 0.25, 0, 0.143408, 0, 0.204778, -19.9354, 0.0279289, -45.9887)
+
+[node name="officechair" parent="Node/characters/Texbody" instance=ExtResource("9_omlht")]
+transform = Transform3D(4, 0, -2.38419e-07, 0, 4, 0, 2.38419e-07, 0, 4, 0, -0.111716, -1.45926)
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="Node"]
 navigation_mesh = SubResource("NavigationMesh_micno")
@@ -172,9 +179,6 @@ transform = Transform3D(-2.95052e-08, 0, -0.675, 0, 0.675, 0, 0.675, 0, -2.95052
 
 [node name="desk" parent="Node/NavigationRegion3D/decoration" instance=ExtResource("8_lf48r")]
 transform = Transform3D(-1.09278e-08, 0, 0.25, 0, 0.25, 0, -0.25, 0, -1.09278e-08, -21.9912, 0, -45.652)
-
-[node name="officechair" parent="Node/NavigationRegion3D/decoration/desk" instance=ExtResource("9_omlht")]
-transform = Transform3D(-4, 0, 3.49691e-07, 0, 4, 0, -3.49691e-07, 0, -4, 0.109482, 0, 5.24773)
 
 [node name="desk2" parent="Node/NavigationRegion3D/decoration" instance=ExtResource("8_lf48r")]
 transform = Transform3D(-0.184858, 0, 0.168308, 0, 0.25, 0, -0.168308, 0, -0.184858, 10.4177, 0, -33.456)

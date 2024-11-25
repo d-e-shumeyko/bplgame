@@ -694,11 +694,12 @@ data = {
 
 [node name="CharacterBody3D" parent="Node" instance=ExtResource("3_gd3d5")]
 
-[node name="tom" parent="Node" node_paths=PackedStringArray("markers", "randMarker") instance=ExtResource("7_ubr64")]
+[node name="tom" parent="Node" node_paths=PackedStringArray("player", "markers", "randMarker") instance=ExtResource("7_ubr64")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0947, 0, 12.5857)
 axis_lock_linear_y = true
 axis_lock_angular_x = true
 axis_lock_angular_z = true
+player = NodePath("../CharacterBody3D")
 markers = [NodePath("../markers/Marker3D"), NodePath("../markers/Marker3D2"), NodePath("../markers/Marker3D3"), NodePath("../markers/Marker3D4"), NodePath("../markers/Marker3D5"), NodePath("../markers/Markerstart"), NodePath("../markers/Marker3D7"), NodePath("../markers/Marker3D8"), NodePath("../markers/Marker3D9"), NodePath("../markers/Marker3D10")]
 randMarker = NodePath("../markers/Markerstart")
 

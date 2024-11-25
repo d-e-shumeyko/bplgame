@@ -3,11 +3,11 @@ class_name tomAnimated
 
 
  
-@onready var animtree: AnimationTree = $AnimationTree
+@onready var animatree: AnimationTree = %AnimationTree
 var trap_closed = false
 
-
-
+func _ready() -> void:
+	animatree  = %AnimationTree
 func trapClosed():
 	trap_closed = true
 func trapOpen():
