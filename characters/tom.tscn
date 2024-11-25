@@ -1,7 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://c8id5c5fea70v"]
+[gd_scene load_steps=9 format=3 uid="uid://c8id5c5fea70v"]
 
 [ext_resource type="Script" path="res://scripts/tom.gd" id="1_h8h8j"]
-[ext_resource type="PackedScene" uid="uid://dnd7spnyg744e" path="res://Assets/Npc.glb" id="2_l14ax"]
+[ext_resource type="PackedScene" uid="uid://bkiblm8xkxqot" path="res://characters/tomBase.tscn" id="2_lgm0n"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7l8sa"]
 radius = 0.776766
@@ -9,20 +9,80 @@ height = 2.55553
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_w0upe"]
 
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_5xbhk"]
+points = PackedVector3Array(0, 0.5, 0.5, 0.5, -0.5, 0.5, 0, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_if2ib"]
+points = PackedVector3Array(0, 0.5, 0.5, 0.5, -0.5, 0.5, 0, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_81trf"]
+size = Vector3(15.9865, 4.42944, 16.3715)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wt6p7"]
+size = Vector3(1, 4.42395, 2.23071)
+
 [node name="CharacterBody3D" type="CharacterBody3D"]
+axis_lock_angular_y = true
 script = ExtResource("1_h8h8j")
 
-[node name="Npc" parent="." instance=ExtResource("2_l14ax")]
-transform = Transform3D(0.35, 0, 0, 0, 0.35, 0, 0, 0, 0.35, 0, 0, 0)
-
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.40732, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.60788, 0)
 shape = SubResource("CapsuleShape3D_7l8sa")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+target_desired_distance = 2.0
+path_height_offset = 2.0
 debug_enabled = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 visible = false
 mesh = SubResource("CapsuleMesh_w0upe")
+
+[node name="longArea" type="Area3D" parent="."]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="longArea"]
+transform = Transform3D(16, 0, 0, 0, -6.99382e-07, -16, 0, 16, -6.99382e-07, 0.0468903, 2.63296, -8.35503)
+shape = SubResource("ConvexPolygonShape3D_5xbhk")
+
+[node name="shortArea" type="Area3D" parent="."]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="shortArea"]
+transform = Transform3D(8, 0, 0, 0, -3.49691e-07, -8, 0, 8, -3.49691e-07, 0.0468903, 2.63296, -4.35726)
+shape = SubResource("ConvexPolygonShape3D_if2ib")
+
+[node name="noticeArea" type="Area3D" parent="."]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="noticeArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0470657, 2.22072, -8.17084)
+shape = SubResource("BoxShape3D_81trf")
+
+[node name="grabArea" type="Area3D" parent="."]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="grabArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.20953, -1.08435)
+shape = SubResource("BoxShape3D_wt6p7")
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="tom2" parent="." instance=ExtResource("2_lgm0n")]
+transform = Transform3D(0.35, 0, 0, 0, 0.35, 0, 0, 0, 0.35, 0, 0, 0)
+
+[connection signal="navigation_finished" from="NavigationAgent3D" to="." method="_on_navigation_agent_3d_navigation_finished"]
+[connection signal="body_entered" from="longArea" to="." method="_on_long_area_body_entered"]
+[connection signal="body_exited" from="longArea" to="." method="_on_long_area_body_exited"]
+[connection signal="body_entered" from="shortArea" to="." method="_on_short_area_body_entered"]
+[connection signal="body_exited" from="shortArea" to="." method="_on_short_area_body_exited"]
+[connection signal="body_entered" from="noticeArea" to="." method="_on_notice_area_body_entered"]
+[connection signal="body_exited" from="noticeArea" to="." method="_on_notice_area_body_exited"]
+[connection signal="body_entered" from="grabArea" to="." method="_on_grab_area_body_entered"]
+[connection signal="body_exited" from="grabArea" to="." method="_on_grab_area_body_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://dwwf3axa7httr"]
 
 [ext_resource type="Script" path="res://scripts/forestintro.gd" id="1_0785e"]
-[ext_resource type="PackedScene" uid="uid://cag72fnh16vms" path="res://scenes/cake.tscn" id="3_t7uag"]
+[ext_resource type="PackedScene" uid="uid://cag72fnh16vms" path="res://scenes/decorations/cake.tscn" id="3_t7uag"]
 [ext_resource type="Theme" uid="uid://cd4maiy34rjwm" path="res://Assets/theme.tres" id="4_o3xt3"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g5p56"]

@@ -1,0 +1,57 @@
+[gd_scene load_steps=6 format=3 uid="uid://dx43s2me8yoa4"]
+
+[ext_resource type="PackedScene" uid="uid://nvabcgefpo2b" path="res://Assets/toob.glb" id="1_dso3a"]
+
+[sub_resource type="Animation" id="Animation_genhr"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, -1.309)]
+}
+
+[sub_resource type="Animation" id="Animation_btbqi"]
+resource_name = "turn"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, -1.309), Vector3(0, -6.26573, -1.309)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1mm0u"]
+_data = {
+"RESET": SubResource("Animation_genhr"),
+"turn": SubResource("Animation_btbqi")
+}
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yi3rd"]
+size = Vector3(4.84813, 1, 1)
+
+[node name="toob" instance=ExtResource("1_dso3a")]
+transform = Transform3D(0.181171, 0.676148, 0, -0.676148, 0.181171, 0, 0, 0, 0.7, 0, 1.76427, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="1"]
+libraries = {
+"": SubResource("AnimationLibrary_1mm0u")
+}
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0290451, -1.78814e-07, 0)
+shape = SubResource("BoxShape3D_yi3rd")

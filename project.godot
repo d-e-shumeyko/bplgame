@@ -72,6 +72,10 @@ Flashlight={
 ]
 }
 
+[navigation]
+
+3d/default_cell_size=1.0
+
 [physics]
 
 common/physics_ticks_per_second=120

@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://caga8intx4f4v"]
+
+[ext_resource type="PackedScene" uid="uid://16qr0ek3ct8j" path="res://Assets/Lamp.glb" id="1_t7ne0"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g3aox"]
+albedo_color = Color(0.992157, 0.960784, 0.698039, 1)
+emission_enabled = true
+emission = Color(0.992157, 0.960784, 0.698039, 1)
+emission_energy_multiplier = 3.0
+
+[sub_resource type="SphereMesh" id="SphereMesh_hs76t"]
+material = SubResource("StandardMaterial3D_g3aox")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yoqe3"]
+
+[node name="Lamp" instance=ExtResource("1_t7ne0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000549316, 0.003479, -0.00146484)
+
+[node name="Sphere" parent="." index="0"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+light_color = Color(0.992157, 0.960784, 0.698039, 1)
+light_energy = 5.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="SpotLight3D" index="0"]
+transform = Transform3D(0.32, 0, 0, 0, 0.32, 0, 0, 0, 0.32, 0, -3.95812e-09, 0.0907763)
+mesh = SubResource("SphereMesh_hs76t")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.544717, 0)
+shape = SubResource("BoxShape3D_yoqe3")

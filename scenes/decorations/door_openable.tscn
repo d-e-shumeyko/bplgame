@@ -1,0 +1,108 @@
+[gd_scene load_steps=8 format=3 uid="uid://ri6rcok7b30f"]
+
+[ext_resource type="PackedScene" uid="uid://dkpp46cpsu4xg" path="res://Assets/doorOpenable.glb" id="1_4kfwy"]
+[ext_resource type="Script" path="res://scripts/door_openable.gd" id="2_a15r7"]
+
+[sub_resource type="Animation" id="Animation_0j4qe"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Cylinder_001:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, -0.21438, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_d64y4"]
+resource_name = "close"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Cylinder_001:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0.0872665, 0), Vector3(0, -0.21438, 0)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("StaticBody3D")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.966667),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"has_peeked"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_aw4dp"]
+resource_name = "open"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Cylinder_001:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, -0.21438, 0), Vector3(0, 0.0872665, 0)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("StaticBody3D")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.933333),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"will_peek"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_x42nv"]
+_data = {
+"RESET": SubResource("Animation_0j4qe"),
+"close": SubResource("Animation_d64y4"),
+"open": SubResource("Animation_aw4dp")
+}
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_f2no0"]
+size = Vector3(1.99866, 4.00598, 0.227173)
+
+[node name="doorOpenable" instance=ExtResource("1_4kfwy")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, 0, 0)
+
+[node name="Cylinder_001" parent="." index="1"]
+transform = Transform3D(0.977108, 0, -0.212742, 0, 1, 0, 0.212742, 0, 0.977108, -0.893563, 1.95434, -0.0237017)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="2"]
+libraries = {
+"": SubResource("AnimationLibrary_x42nv")
+}
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="3"]
+script = ExtResource("2_a15r7")
+prompt_message = "PEEK"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000183105, 1.99713, 0.00457764)
+shape = SubResource("BoxShape3D_f2no0")
+
+[connection signal="interacted" from="StaticBody3D" to="StaticBody3D" method="_on_interacted"]

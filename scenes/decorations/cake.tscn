@@ -1,0 +1,69 @@
+[gd_scene load_steps=7 format=3 uid="uid://cag72fnh16vms"]
+
+[ext_resource type="PackedScene" uid="uid://e3pxd25gopgh" path="res://Assets/cake.glb" id="1_un04e"]
+[ext_resource type="Script" path="res://scripts/cake.gd" id="2_lnoop"]
+
+[sub_resource type="Animation" id="Animation_jrm6w"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("cake:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0.0872665)]
+}
+
+[sub_resource type="Animation" id="Animation_dbhmf"]
+resource_name = "new_animation"
+length = 10.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("cake:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0.0872665), Vector3(0, -6.26573, 0.0872665)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0iir8"]
+_data = {
+"RESET": SubResource("Animation_jrm6w"),
+"turn": SubResource("Animation_dbhmf")
+}
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1y5wc"]
+size = Vector3(1.08469, 0.956482, 1.08459)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="cake" parent="." instance=ExtResource("1_un04e")]
+transform = Transform3D(0.996195, -0.0871558, 0, 0.0871558, 0.996195, 0, 0, 0, 1, 0, 0.169945, 0)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="cake"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0628139, 0.838137, 0)
+light_color = Color(0.941176, 0.819608, 0, 1)
+light_energy = 0.1
+light_indirect_energy = 0.1
+omni_range = 0.61384
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_0iir8")
+}
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+script = ExtResource("2_lnoop")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0106659, 0.477692, 0.00177002)
+shape = SubResource("BoxShape3D_1y5wc")

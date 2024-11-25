@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dfyfkkhpavexo"]
 
-[ext_resource type="PackedScene" uid="uid://cag72fnh16vms" path="res://scenes/cake.tscn" id="1_pagt6"]
-[ext_resource type="PackedScene" uid="uid://csl7uuwvemmxt" path="res://scenes/can.tscn" id="1_tbsd6"]
+[ext_resource type="PackedScene" uid="uid://cag72fnh16vms" path="res://scenes/decorations/cake.tscn" id="1_pagt6"]
+[ext_resource type="PackedScene" uid="uid://csl7uuwvemmxt" path="res://scenes/decorations/can.tscn" id="1_tbsd6"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g5p56"]
 albedo_color = Color(0, 0, 0, 1)

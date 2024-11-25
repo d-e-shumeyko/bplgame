@@ -25,7 +25,7 @@ mesh = SubResource("CapsuleMesh_qxybx")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.507483, 0)
 
 [node name="Camera3D" type="Camera3D" parent="head"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.327409)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.474786)
 
 [node name="SpotLight3D" type="SpotLight3D" parent="head/Camera3D"]
 transform = Transform3D(1, 0, 0, 0, 0.994694, -0.102879, 0, 0.102879, 0.994694, 0, -0.207591, 0)

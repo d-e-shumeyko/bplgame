@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://lbpl636p5mma"]
+
+[ext_resource type="PackedScene" uid="uid://cn3nkn0hd8klf" path="res://Assets/barrelCoffee.glb" id="1_xl1b1"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_8rr2j"]
+height = 4.08904
+radius = 1.30634
+
+[node name="barrelCoffee" instance=ExtResource("1_xl1b1")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.04484, 0)
+shape = SubResource("CylinderShape3D_8rr2j")

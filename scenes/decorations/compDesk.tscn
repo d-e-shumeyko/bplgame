@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://bld1hnncy5sgb"]
+
+[ext_resource type="PackedScene" uid="uid://b8x37bkthmk06" path="res://Assets/desk.glb" id="1_qu51t"]
+[ext_resource type="PackedScene" uid="uid://b30jiisnwjan" path="res://Assets/crt.glb" id="2_6idy8"]
+[ext_resource type="PackedScene" uid="uid://iphyq8hx2hgd" path="res://Assets/pc.glb" id="3_pj5dm"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o3kyt"]
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 16.0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_3tonf"]
+material = SubResource("StandardMaterial3D_o3kyt")
+
+[node name="Node3D" type="Node3D"]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
+
+[node name="desk" parent="." instance=ExtResource("1_qu51t")]
+
+[node name="crt" parent="." instance=ExtResource("2_6idy8")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 5.10234, 0)
+
+[node name="pc" parent="crt" instance=ExtResource("3_pj5dm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.39874, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.802665, 0, 0, 0, -2.62243e-08, -0.599942, 0, 0.599942, -2.62243e-08, 0, 6.49664, 1.01647)
+mesh = SubResource("PlaneMesh_3tonf")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+light_energy = 8.0
+spot_range = 50.9579
+spot_angle = 32.0278

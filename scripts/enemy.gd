@@ -51,7 +51,7 @@ func _physics_process(_delta: float) -> void:
 	move_and_slide()
 
 	if nav_agent.is_target_reached() == false:
-		look_at(Vector3( nav_agent.target_position.x, 0.0, nav_agent.target_position.z))
+		look_at(Vector3( nav_agent.target_position.x, 0, nav_agent.target_position.z))
 	
 	
 	
@@ -178,3 +178,7 @@ func player_caught():
 
 
 #endregion
+
+
+func _on_navigation_agent_3d_navigation_finished() -> void:
+	look_at(Vector3 (randf_range(-50, 50), player.global_position.y , randf_range(-50, 50)))
