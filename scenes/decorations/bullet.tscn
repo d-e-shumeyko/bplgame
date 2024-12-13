@@ -1,0 +1,230 @@
+[gd_scene load_steps=13 format=3 uid="uid://donuysvk8jvot"]
+
+[ext_resource type="Script" path="res://scripts/bullet.gd" id="1_rtx83"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fpd7d"]
+albedo_color = Color(0.74902, 0.4, 0.117647, 1)
+emission_enabled = true
+emission = Color(1, 0.942, 0.42, 1)
+emission_energy_multiplier = 5.0
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_23560"]
+material = SubResource("StandardMaterial3D_fpd7d")
+radius = 0.05
+height = 0.2
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_oxqr5"]
+direction = Vector3(0, 0, 1)
+initial_velocity_min = 3.0
+initial_velocity_max = 5.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mnjnk"]
+albedo_color = Color(1, 0.433333, 0, 1)
+emission_enabled = true
+emission = Color(0.991333, 1, 0.74, 1)
+emission_energy_multiplier = 8.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_vst8s"]
+material = SubResource("StandardMaterial3D_mnjnk")
+size = Vector3(0.04, 0.04, 0.04)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_jcdhp"]
+radius = 0.0497349
+height = 0.200199
+
+[sub_resource type="Gradient" id="Gradient_4gl5o"]
+offsets = PackedFloat32Array(0.36, 1)
+colors = PackedColorArray(0, 0, 0, 0, 1, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ufahq"]
+gradient = SubResource("Gradient_4gl5o")
+fill = 2
+fill_from = Vector2(0.5, 0.51626)
+
+[sub_resource type="Animation" id="Animation_kknk1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasGroup:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasGroup/Sprite2D:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ColorRect:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ColorRect:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_iu3fa"]
+resource_name = "shot"
+length = 1.5
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasGroup:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.01, 1.48),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasGroup/Sprite2D:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.01, 0.48),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ColorRect:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.49, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ColorRect:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.5, 1.49),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/4/type = "method"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(1.49),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"diededed"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_x8u7o"]
+_data = {
+"RESET": SubResource("Animation_kknk1"),
+"shot": SubResource("Animation_iu3fa")
+}
+
+[node name="Node3D" type="Node3D" node_paths=PackedStringArray("hit", "canvas", "animation")]
+script = ExtResource("1_rtx83")
+hit = NodePath("Area3D")
+canvas = NodePath("CanvasGroup")
+animation = NodePath("AnimationPlayer")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+mesh = SubResource("CapsuleMesh_23560")
+
+[node name="RayCast3D" type="RayCast3D" parent="MeshInstance3D"]
+target_position = Vector3(0, -0.2, 0)
+collision_mask = 15
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.187448)
+emitting = false
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_oxqr5")
+draw_pass_1 = SubResource("BoxMesh_vst8s")
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 0
+collision_mask = 8
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_jcdhp")
+
+[node name="CanvasGroup" type="CanvasGroup" parent="."]
+visible = false
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasGroup"]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(576, 324)
+scale = Vector2(18, 10.125)
+texture = SubResource("GradientTexture2D_ufahq")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0)
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="ColorRect"]
+layout_mode = 0
+offset_right = 1150.0
+offset_bottom = 646.0
+theme_override_colors/font_color = Color(0.66, 0, 0, 1)
+theme_override_font_sizes/font_size = 48
+text = "HARDBALLED
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_x8u7o")
+}
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

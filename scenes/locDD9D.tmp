@@ -1,0 +1,731 @@
+[gd_scene load_steps=54 format=3 uid="uid://bacocd65kfhjl"]
+
+[ext_resource type="PackedScene" uid="uid://df73qm0v7k00e" path="res://scenes/pauseMenu.tscn" id="1_ctdmj"]
+[ext_resource type="PackedScene" uid="uid://c3rwxpcahhhup" path="res://characters/player.tscn" id="1_jx6ho"]
+[ext_resource type="MeshLibrary" uid="uid://c00qmdsj4ob5u" path="res://Tilests/LocRed.tres" id="1_wcq62"]
+[ext_resource type="PackedScene" uid="uid://cd8p48r3j6oso" path="res://Tilests/tupperware.tscn" id="2_mmkp0"]
+[ext_resource type="AudioStream" uid="uid://b2jfqglac0555" path="res://audio/music/goat/hellova way03.wav" id="3_e0o8t"]
+[ext_resource type="PackedScene" uid="uid://djaqxhqf4eui0" path="res://scenes/decorations/doorEntrance.tscn" id="3_l57u8"]
+[ext_resource type="Script" path="res://scripts/goat_audio.gd" id="3_wk4ef"]
+[ext_resource type="PackedScene" uid="uid://ri6rcok7b30f" path="res://scenes/decorations/door_openable.tscn" id="4_3nrvl"]
+[ext_resource type="PackedScene" uid="uid://c8gk86nc8wu1v" path="res://scenes/decorations/pillar.tscn" id="5_jvn0y"]
+[ext_resource type="PackedScene" uid="uid://c2ro6mnwdxe1b" path="res://scenes/decorations/animatedBookcase.tscn" id="5_rj6f4"]
+[ext_resource type="PackedScene" uid="uid://bjjtjfdbe8r0w" path="res://Assets/GUNLIBRARY.glb" id="6_u0w4p"]
+[ext_resource type="PackedScene" uid="uid://dmoopcvmk4bw5" path="res://characters/texNew.tscn" id="7_aohyq"]
+[ext_resource type="PackedScene" uid="uid://dppjehys81s4c" path="res://scenes/decorations/floor_lamp.tscn" id="7_hw564"]
+[ext_resource type="AudioStream" uid="uid://3nep216av73g" path="res://audio/texSniperElite.wav" id="7_mekba"]
+[ext_resource type="PackedScene" uid="uid://5k0x3w7aryyy" path="res://scenes/decorations/door_crow.tscn" id="7_w44a1"]
+[ext_resource type="PackedScene" uid="uid://bld1hnncy5sgb" path="res://scenes/decorations/compDesk.tscn" id="8_lf48r"]
+[ext_resource type="PackedScene" uid="uid://dk3lws7gfmo6n" path="res://scenes/decorations/officeChair.tscn" id="9_omlht"]
+[ext_resource type="AudioStream" uid="uid://dk35l52akfni7" path="res://audio/sfx/trainHorn.wav" id="9_vo8lb"]
+[ext_resource type="AudioStream" uid="uid://bor00i7wev5wd" path="res://audio/crowShivers.wav" id="10_vkx5o"]
+[ext_resource type="PackedScene" uid="uid://djvtkkdov6obl" path="res://Assets/GOAT.glb" id="11_eof6r"]
+[ext_resource type="PackedScene" uid="uid://dx43s2me8yoa4" path="res://scenes/decorations/toob.tscn" id="12_xif1k"]
+[ext_resource type="PackedScene" uid="uid://dkv0w3b73ohbo" path="res://scenes/decorations/couch.tscn" id="15_h6o6k"]
+[ext_resource type="PackedScene" uid="uid://e5ewe0efx2gn" path="res://scenes/decorations/easychair.tscn" id="16_bft2y"]
+[ext_resource type="PackedScene" uid="uid://cu3ccschmgsji" path="res://scenes/decorations/texDesk.tscn" id="17_srss7"]
+[ext_resource type="Script" path="res://scenes/CBHelper.gd" id="19_aig37"]
+[ext_resource type="Script" path="res://scripts/game_manager_lr.gd" id="20_1s7s5"]
+[ext_resource type="Texture2D" uid="uid://buw3tydguicd0" path="res://Assets/9iMaK88lV14h85Lvv2zPoEYtKnAnqDibNxjnx5YpYLRhyM3NbtCCpf1SSSdXhxAy_large_2.jpg" id="22_7e022"]
+[ext_resource type="PackedScene" uid="uid://dtskjy48ugmnj" path="res://scenes/decorations/doorFrameWide.tscn" id="23_ip10y"]
+[ext_resource type="Texture2D" uid="uid://dja6tlgljksfr" path="res://Assets/BPL_Logo.png" id="23_sii7p"]
+[ext_resource type="PackedScene" uid="uid://cyw75nfjoe20" path="res://scenes/decorations/doorWide.tscn" id="24_y62ri"]
+[ext_resource type="Script" path="res://scripts/LRexitDoor.gd" id="26_6ah57"]
+[ext_resource type="PackedScene" uid="uid://chvjusivwwasw" path="res://scenes/decorations/train.tscn" id="28_cb307"]
+[ext_resource type="Script" path="res://scripts/gunLibDoor.gd" id="30_apq68"]
+[ext_resource type="PackedScene" uid="uid://ueq0uxfdn7bp" path="res://scenes/decorations/lazyfix.tscn" id="31_bf1qj"]
+[ext_resource type="AudioStream" uid="uid://bqctye21hbwj3" path="res://audio/music/LRmusic.wav" id="31_fmxem"]
+[ext_resource type="PackedScene" uid="uid://bw636afcvveo5" path="res://scenes/transitions/transitionController.tscn" id="33_ksgqj"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_u3kfc"]
+radius = 20.2436
+
+[sub_resource type="Animation" id="Animation_4fuko"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, -78.3226)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../../NavigationRegion3D/decoration/shelving/bookcase13:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 2.63164e-15, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../../NavigationRegion3D/decoration/shelving/bookcase12:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 2.63164e-15, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../../NavigationRegion3D/decoration/shelving/bookcase13:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-1.50367, 0, -71.3298)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../../NavigationRegion3D/decoration/shelving/bookcase12:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1.52256, 0, -71.3298)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../../NavigationRegion3D/decoration/entranceDoor/door:rotation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("../../NavigationRegion3D/decoration/entranceDoor/door:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("AudioStreamPlayer3D:playing")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_p4ger"]
+resource_name = "train"
+length = 5.0
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.31, 5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, -78.3226), Vector3(0, 0, -78.3226), Vector3(0, 0, 13.877)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../../NavigationRegion3D/decoration/shelving/bookcase13:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.73, 1.5, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 2.63164e-15, 0), Vector3(0, -1.5708, 0), Vector3(0, -1.5708, 0), Vector3(0, 2.63164e-15, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../../NavigationRegion3D/decoration/shelving/bookcase12:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.73, 1.5, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 2.63164e-15, 0), Vector3(0, 1.5708, 0), Vector3(0, 1.5708, 0), Vector3(0, 2.63164e-15, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../../NavigationRegion3D/decoration/shelving/bookcase13:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.73, 1.5, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-1.50367, 0, -71.3298), Vector3(-3.68082, 0, -70.4763), Vector3(-3.68082, 0, -70.4763), Vector3(-1.50367, 0, -71.3298)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../../NavigationRegion3D/decoration/shelving/bookcase12:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.73, 1.5, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(1.52256, 0, -71.3298), Vector3(3.68006, 0, -70.4801), Vector3(3.68006, 0, -70.4801), Vector3(1.52256, 0, -71.3298)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../../NavigationRegion3D/decoration/entranceDoor/door:rotation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 3, 4, 4.79, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 1.5708, 0), Vector3(0, 1.5708, 0), Vector3(0, 0, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("../../NavigationRegion3D/decoration/entranceDoor/door:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 3, 4, 4.79, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(-1.37717, 0, -1.32026), Vector3(-1.37717, 0, -1.32026), Vector3(0, 0, 0)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("AudioStreamPlayer3D:playing")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 0.01),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vr486"]
+_data = {
+"RESET": SubResource("Animation_4fuko"),
+"train": SubResource("Animation_p4ger")
+}
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_2yaev"]
+radius = 13.7386
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_micno"]
+
+[sub_resource type="Animation" id="Animation_ovurp"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-5.33329, 0, -65.9961)]
+}
+
+[sub_resource type="Animation" id="Animation_i6j2t"]
+resource_name = "secretDoor"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-5.33329, 0, -65.9961), Vector3(-5.33329, 0, -68.997)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_flfwt"]
+_data = {
+"RESET": SubResource("Animation_ovurp"),
+"secretDoor": SubResource("Animation_i6j2t")
+}
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cdcif"]
+size = Vector3(66.4899, 1, 46.4406)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_elds6"]
+albedo_texture = ExtResource("22_7e022")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_6s05g"]
+material = SubResource("StandardMaterial3D_elds6")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1ja8e"]
+transparency = 1
+albedo_texture = ExtResource("23_sii7p")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_lcqug"]
+material = SubResource("StandardMaterial3D_1ja8e")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nb01j"]
+size = Vector3(3.43954, 3.54193, 0.721191)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wo6hj"]
+size = Vector3(0.661743, 2.91559, 1.51361)
+
+[sub_resource type="Environment" id="Environment_bn4vg"]
+background_mode = 1
+background_color = Color(0, 0, 0.113725, 1)
+fog_enabled = true
+fog_light_color = Color(0, 0, 0.113725, 1)
+fog_sun_scatter = 0.2
+fog_density = 0.1
+
+[node name="Node3D" type="Node3D"]
+process_mode = 3
+
+[node name="Node" type="Node" parent="."]
+process_mode = 1
+
+[node name="characters" type="Node" parent="Node"]
+
+[node name="player" parent="Node/characters" instance=ExtResource("1_jx6ho")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.74879, 1, -46.154)
+collision_layer = 397
+
+[node name="GOAT" parent="Node/characters" instance=ExtResource("11_eof6r")]
+transform = Transform3D(-0.186129, 0, 0.464065, 0, 0.5, 0, -0.464065, 0, -0.186129, -10.4783, 8.9407e-08, -12.2456)
+
+[node name="goatAudio" type="AudioStreamPlayer3D" parent="Node/characters/GOAT" node_paths=PackedStringArray("ostAudio")]
+transform = Transform3D(2, 0, 5.96046e-08, 0, 2, 0, 0, 0, 2, -7.23292, 0, 4.47662)
+stream = ExtResource("3_e0o8t")
+unit_size = 1.0
+max_db = 6.0
+autoplay = true
+max_distance = 10.0
+bus = &"SFX"
+script = ExtResource("3_wk4ef")
+ostAudio = NodePath("../../../ost")
+
+[node name="Area3D" type="Area3D" parent="Node/characters/GOAT/goatAudio"]
+transform = Transform3D(0.5, 0, -2.98023e-08, 0, 0.5, 0, 1.49012e-08, 0, 0.5, 0, 0, 0)
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node/characters/GOAT/goatAudio/Area3D"]
+shape = SubResource("SphereShape3D_u3kfc")
+
+[node name="train" parent="Node/characters" instance=ExtResource("28_cb307")]
+transform = Transform3D(-2.39, 0, -2.0894e-07, 0, 2.39, 0, 2.0894e-07, 0, -2.39, 0, 0, -78.3226)
+visible = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Node/characters/train"]
+libraries = {
+"": SubResource("AnimationLibrary_vr486")
+}
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Node/characters/train"]
+stream = ExtResource("9_vo8lb")
+max_db = 6.0
+panning_strength = 3.0
+bus = &"SFX"
+
+[node name="tex" parent="Node/characters" instance=ExtResource("7_aohyq")]
+transform = Transform3D(0.000973032, 0, -0.249998, 0, 0.25, 0, 0.249998, 0, 0.000973032, -19.3636, -0.0114732, -45.9158)
+
+[node name="CharacterBody3D" parent="Node/characters/tex" index="0" node_paths=PackedStringArray("player", "detectionArea", "desk", "trainController", "sniperElite", "barksPlayer", "gunPlayer", "pillar")]
+player = NodePath("../../player")
+detectionArea = NodePath("../detectableArea")
+desk = NodePath("../../../NavigationRegion3D/decoration/texDesk")
+trainController = NodePath("../../train/AnimationPlayer")
+sniperElite = NodePath("../texAudio")
+barksPlayer = NodePath("../barks")
+gunPlayer = NodePath("../thompson")
+pillar = NodePath("../../../NavigationRegion3D/decoration/pillar")
+
+[node name="detectableArea" type="Area3D" parent="Node/characters/tex"]
+transform = Transform3D(-3.77576, 0, 1.32048, 0, 4, 0, -1.32048, 0, -3.77576, -18.062, 0.157609, 0.908447)
+collision_mask = 128
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node/characters/tex/detectableArea"]
+transform = Transform3D(0.999999, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 0.999999, -1.73, 1.33271, -0.566563)
+shape = SubResource("SphereShape3D_2yaev")
+
+[node name="texAudio" type="AudioStreamPlayer3D" parent="Node/characters/tex"]
+transform = Transform3D(-1.74845e-07, 0, 4, 0, 4, 0, -4, 0, -1.74845e-07, -6.53808, 0.157609, 0.908447)
+stream = ExtResource("7_mekba")
+unit_size = 1.0
+max_db = 6.0
+autoplay = true
+max_distance = 30.0
+bus = &"SFX"
+
+[node name="barks" type="AudioStreamPlayer3D" parent="Node/characters/tex"]
+transform = Transform3D(-1.74845e-07, 0, 4, 0, 4, 0, -4, 0, -1.74845e-07, -18.062, 0.157609, 0.908447)
+
+[node name="thompson" type="AudioStreamPlayer3D" parent="Node/characters/tex"]
+transform = Transform3D(4, 0, -1.98952e-13, 0, 4, 0, 1.98952e-13, 0, 4, 63.7264, 0.0458926, 183.663)
+bus = &"SFX"
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="Node"]
+navigation_mesh = SubResource("NavigationMesh_micno")
+
+[node name="decoration" type="Node" parent="Node/NavigationRegion3D"]
+
+[node name="tupperware" parent="Node/NavigationRegion3D/decoration" instance=ExtResource("2_mmkp0")]
+transform = Transform3D(1.3, 0, 0, 0, 0.209577, -1.32486, 0, 1.2759, 0.217618, 10.308, 1.28735, -43.7298)
+
+[node name="doorOpenable" parent="Node/NavigationRegion3D/decoration" instance=ExtResource("4_3nrvl")]
+transform = Transform3D(-3.27835e-08, 0, 0.75, 0, 0.75, 0, -0.75, 0, -3.27835e-08, -5.94374, 0, -9.75317)
+
+[node name="movingBookcase" parent="Node/NavigationRegion3D/decoration" instance=ExtResource("5_rj6f4")]
+transform = Transform3D(-2.95052e-08, 0, 0.675, 0, 0.675, 0, -0.675, 0, -2.95052e-08, -5.33329, 0, -65.9961)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Node/NavigationRegion3D/decoration/movingBookcase"]
+libraries = {
+"": SubResource("AnimationLibrary_flfwt")
+}
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Node/NavigationRegion3D/decoration/movingBookcase"]
+transform = Transform3D(1.48148, 2.03806e-08, 3.29074e-09, -2.03806e-08, 1.4062, 0.466254, 3.29071e-09, -0.466254, 1.4062, -2.19635, 3.55977, 7.14395)
+visible = false
+light_energy = 6.0
+spot_range = 7.64292
+
+[node name="shelving" type="Node" parent="Node/NavigationRegion3D/decoration"]
+
+[node name="bookcase" parent="Node/NavigationRegion3D/decoration/shelving" instance=ExtResource("5_rj6f4")]
+transform = Transform3D(-2.95052e-08, 0, 0.675, 0, 0.675, 0, -0.675, 0, -2.95052e-08, -5.33052, 0, -63.0141)
+
+[node name="bookcase2" parent="Node/NavigationRegion3D/decoration/shelving" instance=ExtResource("5_rj6f4")]
+transform = Transform3D(-2.95052e-08, 0, 0.675, 0, 0.675, 0, -0.675, 0, -2.95052e-08, -5.33052, 0, -60.0393)
+
+[node name="bookcase3" parent="Node/NavigationRegion3D/decoration/shelving" instance=ExtResource("5_rj6f4")]
+transform = Transform3D(-2.95052e-08, 0, 0.675, 0, 0.675, 0, -0.675, 0, -2.95052e-08, -5.33052, 0, -57.0319)
+
+[node name="bookcase12" parent="Node/NavigationRegion3D/decoration/shelving" instance=ExtResource("5_rj6f4")]
+transform = Transform3D(0.675, 0, 1.77636e-15, 0, 0.675, 0, -1.77636e-15, 0, 0.675, 1.52256, 0, -71.3298)
+
+[node name="bookcase13" parent="Node/NavigationRegion3D/decoration/shelving" instance=ExtResource("5_rj6f4")]
+transform = Transform3D(0.675, 0, 1.77636e-15, 0, 0.675, 0, -1.77636e-15, 0, 0.675, -1.50367, 0, -71.3298)
+
+[node name="bookcase8" parent="Node/NavigationRegion3D/decoration/shelving" instance=ExtResource("5_rj6f4")]
+transform = Transform3D(-2.95052e-08, 0, -0.675, 0, 0.675, 0, 0.675, 0, -2.95052e-08, 5.35603, 0, -54.0141)
+
+[node name="bookcase9" parent="Node/NavigationRegion3D/decoration/shelving" instance=ExtResource("5_rj6f4")]
+transform = Transform3D(-2.95052e-08, 0, -0.675, 0, 0.675, 0, 0.675, 0, -2.95052e-08, 5.35603, 0, -51.0393)
+
+[node name="bookcase10" parent="Node/NavigationRegion3D/decoration/shelving" instance=ExtResource("5_rj6f4")]
+transform = Transform3D(-2.95052e-08, 0, -0.675, 0, 0.675, 0, 0.675, 0, -2.95052e-08, 5.35603, 0, -48.0319)
+
+[node name="bookcase11" parent="Node/NavigationRegion3D/decoration/shelving" instance=ExtResource("5_rj6f4")]
+transform = Transform3D(-2.95052e-08, 0, -0.675, 0, 0.675, 0, 0.675, 0, -2.95052e-08, 5.35603, 0, -45.0319)
+
+[node name="bookcase14" parent="Node/NavigationRegion3D/decoration/shelving" instance=ExtResource("5_rj6f4")]
+transform = Transform3D(-0.675, 0, 0, 0, 0.675, 0, 0, 0, -0.675, -8.35063, 0, -38.1515)
+
+[node name="bookcase15" parent="Node/NavigationRegion3D/decoration/shelving" instance=ExtResource("5_rj6f4")]
+transform = Transform3D(-0.675, 0, 0, 0, 0.675, 0, 0, 0, -0.675, -11.3254, 0, -38.1515)
+
+[node name="bookcase16" parent="Node/NavigationRegion3D/decoration/shelving" instance=ExtResource("5_rj6f4")]
+transform = Transform3D(-0.675, 0, 0, 0, 0.675, 0, 0, 0, -0.675, -14.3328, 0, -38.1515)
+
+[node name="bookcase17" parent="Node/NavigationRegion3D/decoration/shelving" instance=ExtResource("5_rj6f4")]
+transform = Transform3D(-0.675, 0, 0, 0, 0.675, 0, 0, 0, -0.675, -17.3328, 0, -38.1515)
+
+[node name="bookcase22" parent="Node/NavigationRegion3D/decoration/shelving" instance=ExtResource("5_rj6f4")]
+transform = Transform3D(2.95052e-08, 0, 0.675, 0, 0.675, 0, -0.675, 0, 2.95052e-08, -8.44934, 0, -43.1648)
+
+[node name="bookcase24" parent="Node/NavigationRegion3D/decoration/shelving" instance=ExtResource("5_rj6f4")]
+transform = Transform3D(2.95052e-08, 0, 0.675, 0, 0.675, 0, -0.675, 0, 2.95052e-08, -5.33916, 0, -31.1499)
+
+[node name="bookcase23" parent="Node/NavigationRegion3D/decoration/shelving" instance=ExtResource("5_rj6f4")]
+transform = Transform3D(-2.95052e-08, 0, -0.675, 0, 0.675, 0, 0.675, 0, -2.95052e-08, -9.79047, 0, -43.1648)
+
+[node name="bookcase18" parent="Node/NavigationRegion3D/decoration/shelving" instance=ExtResource("5_rj6f4")]
+transform = Transform3D(0.675, 0, 5.90104e-08, 0, 0.675, 0, -5.90104e-08, 0, 0.675, -17.3202, 0, -54.848)
+
+[node name="bookcase19" parent="Node/NavigationRegion3D/decoration/shelving" instance=ExtResource("5_rj6f4")]
+transform = Transform3D(0.675, 0, 5.90104e-08, 0, 0.675, 0, -5.90104e-08, 0, 0.675, -14.3454, 0, -54.848)
+
+[node name="bookcase20" parent="Node/NavigationRegion3D/decoration/shelving" instance=ExtResource("5_rj6f4")]
+transform = Transform3D(0.675, 0, 5.90104e-08, 0, 0.675, 0, -5.90104e-08, 0, 0.675, -11.338, 0, -54.848)
+
+[node name="bookcase21" parent="Node/NavigationRegion3D/decoration/shelving" instance=ExtResource("5_rj6f4")]
+transform = Transform3D(0.675, 0, 5.90104e-08, 0, 0.675, 0, -5.90104e-08, 0, 0.675, -8.33803, 0, -54.848)
+
+[node name="bookcase4" parent="Node/NavigationRegion3D/decoration/shelving" instance=ExtResource("5_rj6f4")]
+transform = Transform3D(-2.95052e-08, 0, -0.675, 0, 0.675, 0, 0.675, 0, -2.95052e-08, 5.33128, 0, -70.5109)
+
+[node name="bookcase7" parent="Node/NavigationRegion3D/decoration/shelving" instance=ExtResource("5_rj6f4")]
+transform = Transform3D(-2.95052e-08, 0, -0.675, 0, 0.675, 0, 0.675, 0, -2.95052e-08, 5.33128, 0, -67.5109)
+
+[node name="bookcase5" parent="Node/NavigationRegion3D/decoration/shelving" instance=ExtResource("5_rj6f4")]
+transform = Transform3D(-2.95052e-08, 0, -0.675, 0, 0.675, 0, 0.675, 0, -2.95052e-08, 5.33128, 0, -60.0393)
+
+[node name="bookcase6" parent="Node/NavigationRegion3D/decoration/shelving" instance=ExtResource("5_rj6f4")]
+transform = Transform3D(-2.95052e-08, 0, -0.675, 0, 0.675, 0, 0.675, 0, -2.95052e-08, 5.33128, 0, -57.0319)
+
+[node name="bookcase25" parent="Node/NavigationRegion3D/decoration/shelving" instance=ExtResource("5_rj6f4")]
+transform = Transform3D(-2.95052e-08, 0, -0.675, 0, 0.675, 0, 0.675, 0, -2.95052e-08, 5.35603, 0, -29.1786)
+
+[node name="bookcase26" parent="Node/NavigationRegion3D/decoration/shelving" instance=ExtResource("5_rj6f4")]
+transform = Transform3D(-2.95052e-08, 0, -0.675, 0, 0.675, 0, 0.675, 0, -2.95052e-08, 5.35603, 0, -26.2038)
+
+[node name="bookcase27" parent="Node/NavigationRegion3D/decoration/shelving" instance=ExtResource("5_rj6f4")]
+transform = Transform3D(-2.95052e-08, 0, -0.675, 0, 0.675, 0, 0.675, 0, -2.95052e-08, 5.35603, 0, -23.1964)
+
+[node name="bookcase28" parent="Node/NavigationRegion3D/decoration/shelving" instance=ExtResource("5_rj6f4")]
+transform = Transform3D(-2.95052e-08, 0, -0.675, 0, 0.675, 0, 0.675, 0, -2.95052e-08, 5.35603, 0, -20.1964)
+
+[node name="bookcase31" parent="Node/NavigationRegion3D/decoration/shelving" instance=ExtResource("5_rj6f4")]
+transform = Transform3D(-2.95052e-08, 0, -0.675, 0, 0.675, 0, 0.675, 0, -2.95052e-08, 5.35603, 0, -15.9857)
+
+[node name="bookcase32" parent="Node/NavigationRegion3D/decoration/shelving" instance=ExtResource("5_rj6f4")]
+transform = Transform3D(-2.95052e-08, 0, -0.675, 0, 0.675, 0, 0.675, 0, -2.95052e-08, 5.35603, 0, -12.9783)
+
+[node name="bookcase33" parent="Node/NavigationRegion3D/decoration/shelving" instance=ExtResource("5_rj6f4")]
+transform = Transform3D(-2.95052e-08, 0, -0.675, 0, 0.675, 0, 0.675, 0, -2.95052e-08, 5.35603, 0, -9.97828)
+
+[node name="bookcase29" parent="Node/NavigationRegion3D/decoration/shelving" instance=ExtResource("5_rj6f4")]
+transform = Transform3D(-2.95052e-08, 0, -0.675, 0, 0.675, 0, 0.675, 0, -2.95052e-08, 5.33128, 0, -35.2038)
+
+[node name="bookcase30" parent="Node/NavigationRegion3D/decoration/shelving" instance=ExtResource("5_rj6f4")]
+transform = Transform3D(-2.95052e-08, 0, -0.675, 0, 0.675, 0, 0.675, 0, -2.95052e-08, 5.33128, 0, -32.1964)
+
+[node name="crowDesk" parent="Node/NavigationRegion3D/decoration" instance=ExtResource("8_lf48r")]
+transform = Transform3D(-0.166372, 0, 0.151477, 0, 0.225, 0, -0.151477, 0, -0.166372, 10.1204, 0, -32.6377)
+
+[node name="officechair" parent="Node/NavigationRegion3D/decoration/crowDesk" instance=ExtResource("9_omlht")]
+transform = Transform3D(-4, 0, 2.38419e-07, 0, 4, 0, -2.38419e-07, 0, -4, -0.146286, 0, 8.9187)
+
+[node name="crowAudio" type="AudioStreamPlayer3D" parent="Node/NavigationRegion3D/decoration/crowDesk"]
+transform = Transform3D(4.44445, 0, 4.76837e-07, 0, 4.44444, 0, -4.76837e-07, 0, 4.44445, 6.02045, 0, 39.9534)
+stream = ExtResource("10_vkx5o")
+attenuation_model = 1
+unit_size = 1.0
+max_db = 6.0
+autoplay = true
+max_distance = 15.0
+bus = &"SFX"
+
+[node name="GUNLIBRARY" parent="Node/NavigationRegion3D/decoration" instance=ExtResource("6_u0w4p")]
+transform = Transform3D(-8.74228e-09, 0, -0.2, 0, 0.2, 0, 0.2, 0, -8.74228e-09, 5.99093, 2.00176, -62.2893)
+
+[node name="floorLamp" parent="Node/NavigationRegion3D/decoration" instance=ExtResource("7_hw564")]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 15.9467, 0, -40.6082)
+
+[node name="floorLamp2" parent="Node/NavigationRegion3D/decoration" instance=ExtResource("7_hw564")]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 5.40048, 0, -65.3892)
+
+[node name="toob" parent="Node/NavigationRegion3D/decoration" instance=ExtResource("12_xif1k")]
+transform = Transform3D(0.129408, 0.482964, 0, -0.482964, 0.129408, 0, 0, 0, 0.5, -10.5989, 1.29035, -66.4155)
+
+[node name="doorOpenable2" parent="Node/NavigationRegion3D/decoration" instance=ExtResource("7_w44a1")]
+transform = Transform3D(-0.750369, 0, -6.55671e-08, 0, 0.75, 0, 6.55993e-08, 0, -0.75, 14.25, 0, -37.579)
+
+[node name="pillar" parent="Node/NavigationRegion3D/decoration" node_paths=PackedStringArray("bookcase", "light") instance=ExtResource("5_jvn0y")]
+transform = Transform3D(1, 0, 0, 0, 0.5, 0, 0, 0, 1, -19.5055, 0, -53.8028)
+bookcase = NodePath("../movingBookcase/AnimationPlayer")
+light = NodePath("../movingBookcase/SpotLight3D")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Node/NavigationRegion3D/decoration/pillar"]
+transform = Transform3D(0.684355, -0.354082, 0.637404, 0.225342, 0.934087, 0.276952, -0.693455, -0.0458992, 0.719037, 2.1714, 4.88186, 2.36271)
+light_energy = 13.643
+spot_angle = 16.0508
+
+[node name="couch" parent="Node/NavigationRegion3D/decoration" instance=ExtResource("15_h6o6k")]
+transform = Transform3D(-0.75, 0, -6.55671e-08, 0, 0.75, 0, 6.55671e-08, 0, -0.75, -15.1028, 0, -42.5211)
+
+[node name="couch2" parent="Node/NavigationRegion3D/decoration" instance=ExtResource("15_h6o6k")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -13.3342, 0, -51.1818)
+
+[node name="easychair" parent="Node/NavigationRegion3D/decoration" instance=ExtResource("16_bft2y")]
+transform = Transform3D(0.426755, 0, 0.61675, 0, 0.75, 0, -0.61675, 0, 0.426755, -20.6251, 0, -51.2261)
+
+[node name="texDesk" parent="Node/NavigationRegion3D/decoration" instance=ExtResource("17_srss7")]
+transform = Transform3D(-1.09278e-08, 0, 0.25, 0, 0.25, 0, -0.25, 0, -1.09278e-08, -21.9912, 0, -45.652)
+
+[node name="crouchArea" type="Area3D" parent="Node/NavigationRegion3D/decoration/texDesk"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node/NavigationRegion3D/decoration/texDesk/crouchArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.77106, 2.7369, 23.8939)
+shape = SubResource("BoxShape3D_cdcif")
+
+[node name="tapestry" type="MeshInstance3D" parent="Node/NavigationRegion3D/decoration"]
+transform = Transform3D(-1.84981e-07, 1, 0, 1.84981e-07, 1.91069e-15, -1, -4.23187, -4.37114e-08, -4.37114e-08, -5.97353, 1.56987, -23.7644)
+mesh = SubResource("PlaneMesh_6s05g")
+skeleton = NodePath("../../../characters")
+
+[node name="logo" type="MeshInstance3D" parent="Node/NavigationRegion3D/decoration"]
+transform = Transform3D(-4.37114e-08, 1, 0, 4.37114e-08, 1.91069e-15, -1, -1, -4.37114e-08, -4.37114e-08, -5.98786, 1.57821, -35.2777)
+mesh = SubResource("PlaneMesh_lcqug")
+
+[node name="entranceDoor" parent="Node/NavigationRegion3D/decoration" instance=ExtResource("23_ip10y")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.0405335, 0, 1.52481)
+
+[node name="door" parent="Node/NavigationRegion3D/decoration/entranceDoor" instance=ExtResource("24_y62ri")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Node/NavigationRegion3D/decoration/entranceDoor" node_paths=PackedStringArray("tController")]
+script = ExtResource("26_6ah57")
+tController = NodePath("../../../../../Control")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node/NavigationRegion3D/decoration/entranceDoor/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0107576, 1.27097, -0.139404)
+shape = SubResource("BoxShape3D_nb01j")
+
+[node name="GridMap" type="GridMap" parent="Node/NavigationRegion3D"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
+mesh_library = ExtResource("1_wcq62")
+cell_size = Vector3(1, 1, 1)
+cell_center_y = false
+data = {
+"cells": PackedInt32Array(0, 0, 1441792, 65535, 0, 1048576, 65535, 65535, 1048576, 0, 65535, 1441792, 65534, 65534, 1048578, 1, 65534, 655362, 65534, 65533, 1048576, 1, 65533, 1441792, 1, 65532, 1441792, 65534, 65532, 1048576, 65534, 65531, 1048576, 1, 65531, 1441792, 2, 65530, 655360, 65533, 65530, 655360, 3, 65529, 1441792, 3, 65530, 655362, 65532, 65530, 1048578, 3, 65528, 1441792, 3, 65527, 1441792, 3, 65526, 1441792, 3, 65521, 1441792, 3, 65516, 1441792, 3, 65511, 1441792, 3, 65525, 1441792, 3, 65524, 1441792, 3, 65523, 1441792, 3, 65522, 1441792, 3, 65520, 1441792, 3, 65519, 1441792, 3, 65518, 1441792, 3, 65517, 1441792, 3, 65512, 1441792, 3, 65513, 1441792, 3, 65514, 1441792, 3, 65515, 1441792, 65532, 65527, 1048576, 65532, 65526, 1048576, 65532, 65525, 1048576, 65532, 65524, 1048576, 65532, 65523, 1048576, 65532, 65522, 1048576, 65532, 65521, 1048576, 65532, 65520, 1048576, 65532, 65519, 1048576, 65532, 65518, 1048576, 65532, 65517, 1048576, 65532, 65516, 1048576, 65532, 65515, 1048576, 65532, 65514, 1048576, 65532, 65513, 1048576, 65532, 65512, 1048576, 65532, 65511, 1048576, 4, 65510, 655360, 5, 65510, 655360, 6, 65510, 655360, 7, 65510, 655360, 8, 65510, 655360, 10, 65510, 655360, 3, 65506, 1441792, 65531, 65510, 655360, 65530, 65510, 655360, 65529, 65510, 655360, 65528, 65510, 655360, 65527, 65510, 655360, 65526, 65510, 655360, 65525, 65510, 655360, 65524, 65510, 655360, 65523, 65510, 655360, 65522, 65510, 655360, 65521, 65510, 1048578, 65521, 65509, 1048576, 65521, 65508, 1048576, 65521, 65507, 1048576, 65521, 65506, 1048576, 65521, 65505, 1048576, 65521, 65504, 1048576, 65521, 65503, 1048576, 65521, 65502, 1048576, 65521, 65501, 1048576, 65521, 65500, 1048576, 65521, 65499, 2, 65522, 65499, 0, 65523, 65499, 0, 65524, 65499, 0, 65525, 65499, 0, 65526, 65499, 0, 65527, 65499, 0, 65528, 65499, 0, 65529, 65499, 0, 65530, 65499, 0, 65531, 65499, 0, 65532, 65498, 1048576, 3, 65505, 1441792, 3, 65504, 1441792, 3, 65503, 1441792, 3, 65502, 1441792, 3, 65501, 1441792, 3, 65500, 1441792, 3, 65499, 1441792, 3, 65498, 1441792, 65532, 65494, 1048576, 65532, 65489, 1048576, 65532, 65488, 2, 3, 65497, 1441792, 3, 65496, 1441792, 3, 65495, 1441792, 3, 65494, 1441792, 3, 65492, 1441792, 3, 65491, 1441792, 3, 65490, 1441792, 3, 65489, 1441792, 3, 65488, 1441794, 65532, 65497, 1048576, 65532, 65496, 1048576, 65532, 65495, 1048576, 65532, 65493, 1048576, 65532, 65490, 1048576, 65533, 65488, 0, 65534, 65488, 1, 0, 65488, 1, 1, 65488, 1, 10, 65507, 0, 9, 65507, 0, 8, 65507, 0, 7, 65507, 0, 6, 65507, 0, 5, 65507, 0, 4, 65507, 0, 10, 65509, 1, 9, 65509, 1, 8, 65509, 1, 7, 65509, 1, 6, 65509, 1, 5, 65509, 1, 4, 65509, 1, 3, 65509, 1, 10, 65508, 1, 9, 65508, 1, 8, 65508, 1, 7, 65508, 1, 6, 65508, 1, 5, 65508, 1, 4, 65508, 1, 3, 65508, 1, 3, 65507, 1, 3, 65510, 1, 0, 65534, 1, 0, 65533, 1, 0, 65532, 1, 0, 65531, 1, 0, 65530, 1, 65535, 65534, 1, 65535, 65533, 1, 65535, 65532, 1, 65535, 65531, 1, 65535, 65530, 1, 1, 65530, 1, 65534, 65530, 1, 65533, 65529, 1, 65533, 65528, 1, 65533, 65515, 1, 65533, 65516, 1, 65533, 65517, 1, 65533, 65518, 1, 65533, 65519, 1, 65533, 65520, 1, 65533, 65521, 1, 65533, 65522, 1, 65533, 65523, 1, 65533, 65524, 1, 65533, 65525, 1, 65533, 65526, 1, 65533, 65527, 1, 2, 65515, 1, 2, 65516, 1, 2, 65517, 1, 2, 65518, 1, 2, 65519, 1, 2, 65520, 1, 2, 65521, 1, 2, 65522, 1, 2, 65523, 1, 2, 65524, 1, 2, 65525, 1, 2, 65526, 1, 2, 65527, 1, 2, 65529, 1, 2, 65528, 1, 2, 65514, 1, 2, 65513, 1, 2, 65512, 1, 2, 65511, 1, 2, 65510, 1, 2, 65509, 1, 2, 65508, 1, 2, 65507, 1, 65533, 65514, 1, 65533, 65513, 1, 65533, 65512, 1, 65533, 65511, 1, 65533, 65510, 1, 65533, 65509, 1, 65533, 65508, 1, 65534, 65508, 1, 65532, 65510, 1, 65534, 65510, 1, 65535, 65510, 1, 0, 65510, 1, 1, 65510, 1, 1, 65511, 1, 1, 65512, 1, 1, 65513, 1, 1, 65514, 1, 1, 65515, 1, 1, 65516, 1, 1, 65517, 1, 1, 65518, 1, 1, 65519, 1, 0, 65520, 1, 0, 65521, 1, 1, 65520, 1, 1, 65521, 1, 1, 65522, 1, 1, 65523, 1, 1, 65524, 1, 1, 65525, 1, 1, 65526, 1, 1, 65527, 1, 1, 65528, 1, 1, 65529, 1, 0, 65529, 1, 65535, 65529, 1, 65534, 65529, 1, 65534, 65528, 1, 65534, 65527, 1, 65534, 65526, 1, 65534, 65525, 1, 65534, 65524, 1, 65534, 65523, 1, 65534, 65522, 1, 65534, 65521, 1, 65534, 65520, 1, 65534, 65519, 1, 65534, 65518, 1, 65534, 65517, 1, 65534, 65516, 1, 65534, 65515, 1, 65534, 65514, 1, 65534, 65513, 1, 65534, 65512, 1, 65534, 65511, 1, 65535, 65511, 1, 0, 65511, 1, 0, 65512, 1, 0, 65513, 1, 0, 65514, 1, 0, 65515, 1, 0, 65516, 1, 0, 65517, 1, 0, 65518, 1, 0, 65519, 1, 0, 65522, 1, 0, 65523, 1, 0, 65524, 1, 0, 65525, 1, 0, 65526, 1, 0, 65527, 1, 0, 65528, 1, 65535, 65528, 1, 65535, 65527, 1, 65535, 65526, 1, 65535, 65525, 1, 65535, 65524, 1, 65535, 65523, 1, 65535, 65522, 1, 65535, 65521, 1, 65535, 65520, 1, 65535, 65519, 1, 65535, 65518, 1, 65535, 65517, 1, 65535, 65516, 1, 65535, 65515, 1, 65535, 65514, 1, 65535, 65513, 1, 65535, 65512, 1, 1, 65509, 1, 0, 65509, 1, 65535, 65509, 1, 65534, 65509, 1, 65532, 65509, 1, 65531, 65509, 1, 65530, 65509, 1, 65529, 65509, 1, 65528, 65509, 1, 65527, 65509, 1, 65526, 65509, 1, 65525, 65509, 1, 65524, 65509, 1, 65523, 65509, 1, 65522, 65509, 1, 65522, 65508, 1, 65522, 65507, 1, 65522, 65506, 1, 65522, 65505, 1, 65522, 65504, 1, 65522, 65503, 1, 65522, 65502, 1, 65522, 65501, 1, 65522, 65500, 1, 65523, 65500, 1, 65524, 65500, 1, 65524, 65501, 1, 65525, 65501, 1, 65526, 65501, 1, 65527, 65501, 1, 65525, 65500, 1, 65526, 65500, 1, 65527, 65500, 1, 65528, 65500, 1, 65529, 65500, 1, 65530, 65500, 1, 65531, 65500, 1, 65532, 65500, 1, 65533, 65500, 1, 65534, 65500, 1, 65534, 65501, 1, 65535, 65501, 1, 0, 65501, 1, 65532, 65499, 1, 65533, 65499, 1, 65534, 65499, 1, 65535, 65499, 1, 0, 65499, 1, 1, 65499, 1, 2, 65499, 1, 2, 65500, 1, 2, 65501, 1, 2, 65502, 1, 2, 65503, 1, 2, 65504, 1, 2, 65505, 1, 2, 65506, 1, 65535, 65500, 1, 0, 65500, 1, 1, 65500, 1, 1, 65501, 1, 1, 65502, 1, 1, 65503, 1, 1, 65504, 1, 1, 65505, 1, 1, 65506, 1, 1, 65507, 1, 1, 65508, 1, 0, 65508, 1, 65535, 65508, 1, 65532, 65508, 1, 65531, 65508, 1, 65530, 65508, 1, 65529, 65508, 1, 65528, 65508, 1, 65527, 65508, 1, 65526, 65508, 1, 65525, 65508, 1, 65524, 65508, 1, 65523, 65508, 1, 65523, 65507, 1, 65523, 65506, 1, 65523, 65505, 1, 65523, 65504, 1, 65523, 65503, 1, 65523, 65502, 1, 65523, 65501, 1, 65528, 65501, 1, 65529, 65501, 1, 65530, 65501, 1, 65531, 65501, 1, 65532, 65501, 1, 65533, 65501, 1, 0, 65502, 1, 0, 65503, 1, 0, 65504, 1, 0, 65505, 1, 0, 65506, 1, 0, 65507, 1, 65535, 65507, 1, 65534, 65507, 1, 65533, 65507, 1, 65532, 65507, 1, 65531, 65507, 1, 65530, 65507, 1, 65529, 65507, 1, 65528, 65507, 1, 65527, 65507, 1, 65526, 65506, 1, 65525, 65506, 1, 65524, 65507, 1, 65525, 65507, 1, 65526, 65507, 1, 65524, 65506, 1, 65524, 65505, 1, 65524, 65504, 1, 65524, 65503, 1, 65524, 65502, 1, 65525, 65502, 1, 65526, 65502, 1, 65527, 65502, 1, 65529, 65502, 1, 65530, 65502, 1, 65532, 65502, 1, 65533, 65502, 1, 65534, 65502, 1, 65535, 65502, 1, 65531, 65502, 1, 65528, 65502, 1, 65535, 65503, 1, 65535, 65504, 1, 65535, 65505, 1, 65535, 65506, 1, 65534, 65506, 1, 65533, 65506, 1, 65532, 65506, 1, 65531, 65506, 1, 65530, 65506, 1, 65529, 65506, 1, 65528, 65506, 1, 65527, 65506, 1, 65525, 65505, 1, 65525, 65504, 1, 65525, 65503, 1, 65526, 65503, 1, 65527, 65503, 1, 65528, 65503, 1, 65530, 65503, 1, 65533, 65503, 1, 65534, 65503, 1, 65532, 65503, 1, 65531, 65503, 1, 65529, 65503, 1, 65526, 65504, 1, 65527, 65504, 1, 65528, 65504, 1, 65530, 65504, 1, 65531, 65504, 1, 65532, 65504, 1, 65533, 65504, 1, 65534, 65504, 1, 65534, 65505, 1, 65533, 65505, 1, 65532, 65505, 1, 65531, 65505, 1, 65530, 65505, 1, 65529, 65505, 1, 65528, 65505, 1, 65527, 65505, 1, 65526, 65505, 1, 65529, 65504, 1, 65533, 65498, 1, 65534, 65498, 1, 65535, 65498, 1, 0, 65498, 1, 1, 65498, 1, 2, 65498, 1, 2, 65497, 1, 1, 65497, 1, 0, 65497, 1, 65535, 65497, 1, 65534, 65497, 1, 65533, 65497, 1, 65533, 65496, 1, 65534, 65496, 1, 65535, 65496, 1, 0, 65496, 1, 1, 65496, 1, 2, 65496, 1, 65533, 65495, 1, 65534, 65495, 1, 65535, 65495, 1, 0, 65495, 1, 1, 65495, 1, 2, 65495, 1, 65533, 65494, 1, 65534, 65494, 1, 65535, 65494, 1, 0, 65494, 1, 1, 65494, 1, 2, 65494, 1, 65533, 65493, 1, 65534, 65493, 1, 65535, 65493, 1, 0, 65493, 1, 1, 65493, 1, 2, 65493, 1, 65533, 65492, 1, 65534, 65492, 1, 65535, 65492, 1, 0, 65492, 1, 1, 65492, 1, 2, 65492, 1, 65532, 65492, 1, 65532, 65491, 1, 65533, 65491, 1, 65534, 65491, 1, 65535, 65491, 1, 0, 65491, 1, 1, 65491, 1, 2, 65491, 1, 65533, 65490, 1, 65533, 65489, 1, 65534, 65489, 1, 65535, 65489, 1, 0, 65489, 1, 1, 65489, 1, 2, 65489, 1, 2, 65490, 1, 1, 65490, 1, 0, 65490, 1, 65535, 65490, 1, 65534, 65490, 1, 11, 65510, 655362, 11, 65507, 1441794, 11, 65508, 1441792, 11, 65509, 1441792, 65532, 65528, 1048576, 65532, 65529, 1, 65531, 65530, 655360, 65530, 65530, 655360, 65529, 65530, 655360, 65528, 65529, 1048576, 65528, 65530, 1048578, 65531, 65529, 1048577, 65530, 65529, 1048577, 65529, 65529, 1048577, 65531, 65527, 0, 65530, 65527, 0, 65529, 65527, 0, 65528, 65528, 1048576, 65528, 65527, 2, 65531, 65528, 1, 65530, 65528, 1, 65529, 65528, 1, 8, 65514, 655360, 7, 65514, 655360, 6, 65513, 1048576, 6, 65512, 1048576, 6, 65511, 1048576, 6, 65514, 1048578, 8, 65513, 1048577, 7, 65513, 1048577, 7, 65512, 1048577, 8, 65512, 1048577, 8, 65511, 1048577, 7, 65511, 1048577, 10, 65511, 1441792, 10, 65512, 1441792, 10, 65513, 1441792, 9, 65514, 655360, 10, 65514, 655362, 9, 65510, 655361, 9, 65511, 655361, 9, 65512, 655361, 9, 65513, 655361, 3, 65493, 1441792, 65531, 65492, 655360, 65531, 65491, 0, 65530, 65490, 1441792, 65529, 65489, 0, 65528, 65489, 0, 65527, 65490, 1048576, 65527, 65491, 1048576, 65527, 65492, 1048576, 65529, 65493, 655360, 65531, 65493, 655362, 65527, 65493, 1048578, 65527, 65489, 2, 65530, 65489, 1441794, 65530, 65493, 655360, 65530, 65491, 655361, 65530, 65492, 655361, 65529, 65492, 655361, 65528, 65491, 655361, 65528, 65490, 655361, 65529, 65490, 655361, 65529, 65491, 655361, 65528, 65492, 1, 65528, 65493, 655360, 65535, 65488, 1, 2, 65488, 0)
+}
+metadata/_editor_floor_ = Vector3(0, 0, 0)
+
+[node name="door" parent="Node/NavigationRegion3D" instance=ExtResource("3_l57u8")]
+transform = Transform3D(-3.27835e-08, 0, -0.75, 0, 0.75, 0, 0.75, 0, -3.27835e-08, 5.93838, 0, -63.7908)
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="Node/NavigationRegion3D/door" node_paths=PackedStringArray("fix")]
+script = ExtResource("30_apq68")
+fix = NodePath("lazyfix")
+prompt_message = "Open"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node/NavigationRegion3D/door/StaticBody3D2"]
+transform = Transform3D(-5.82818e-08, 0, 1.33333, 0, 1.33333, 0, -1.33333, 0, -5.82818e-08, 0.00118256, 2.033, -0.225505)
+shape = SubResource("BoxShape3D_wo6hj")
+
+[node name="lazyfix" parent="Node/NavigationRegion3D/door/StaticBody3D2" instance=ExtResource("31_bf1qj")]
+
+[node name="floorLamp" parent="Node/NavigationRegion3D" instance=ExtResource("7_hw564")]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -6.70656, 8.9407e-08, -8.2153)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Node"]
+environment = SubResource("Environment_bn4vg")
+
+[node name="CanvasGroup" type="CanvasGroup" parent="Node" node_paths=PackedStringArray("pauseMenu", "controller")]
+visible = false
+script = ExtResource("19_aig37")
+pauseMenu = NodePath("../../PauseMenu")
+controller = NodePath("../characters/tex/CharacterBody3D")
+
+[node name="safe" type="BoxContainer" parent="Node/CanvasGroup"]
+offset_left = 1002.0
+offset_right = 1152.0
+offset_bottom = 649.0
+size_flags_horizontal = 8
+alignment = 1
+
+[node name="Label" type="Label" parent="Node/CanvasGroup/safe"]
+layout_mode = 2
+size_flags_horizontal = 8
+text = "SAFE"
+
+[node name="caution" type="BoxContainer" parent="Node/CanvasGroup"]
+visible = false
+offset_left = 1032.0
+offset_right = 1152.0
+offset_bottom = 648.0
+alignment = 1
+
+[node name="Label" type="Label" parent="Node/CanvasGroup/caution"]
+layout_mode = 2
+text = "CAUTION"
+
+[node name="danger" type="BoxContainer" parent="Node/CanvasGroup"]
+visible = false
+offset_left = 1024.0
+offset_right = 1152.0
+offset_bottom = 648.0
+alignment = 1
+
+[node name="Label" type="Label" parent="Node/CanvasGroup/danger"]
+layout_mode = 2
+text = "DANGER"
+
+[node name="ost" type="AudioStreamPlayer" parent="Node"]
+stream = ExtResource("31_fmxem")
+autoplay = true
+bus = &"Music"
+
+[node name="PauseMenu" parent="." node_paths=PackedStringArray("game_manager") instance=ExtResource("1_ctdmj")]
+process_mode = 3
+visible = false
+game_manager = NodePath("../gameManagerLR")
+
+[node name="gameManagerLR" type="Node3D" parent="."]
+script = ExtResource("20_1s7s5")
+
+[node name="Control" parent="." instance=ExtResource("33_ksgqj")]
+
+[connection signal="body_entered" from="Node/characters/GOAT/goatAudio/Area3D" to="Node/characters/GOAT/goatAudio" method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Node/characters/GOAT/goatAudio/Area3D" to="Node/characters/GOAT/goatAudio" method="_on_area_3d_body_exited"]
+[connection signal="body_entered" from="Node/characters/tex/detectableArea" to="Node/characters/tex/CharacterBody3D" method="_on_detectable_area_body_entered"]
+[connection signal="body_exited" from="Node/characters/tex/detectableArea" to="Node/characters/tex/CharacterBody3D" method="_on_detectable_area_body_exited"]
+[connection signal="interacted" from="Node/NavigationRegion3D/decoration/entranceDoor/StaticBody3D" to="Node/NavigationRegion3D/decoration/entranceDoor/StaticBody3D" method="_on_interacted"]
+[connection signal="interacted" from="Node/NavigationRegion3D/door/StaticBody3D2" to="Node/NavigationRegion3D/door/StaticBody3D2" method="_on_interacted"]
+
+[editable path="Node/characters/tex"]
+[editable path="Node/characters/tex/CharacterBody3D/Texbody"]

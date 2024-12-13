@@ -1,7 +1,7 @@
 extends Node3D
 class_name gameManager
 signal toggleGamePAused(is_paused : bool)
-
+var LR = false
 var gamePaused : bool = false:
 	get:
 		return gamePaused

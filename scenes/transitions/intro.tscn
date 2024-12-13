@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://b0pvnljv8tko2"]
+[gd_scene load_steps=7 format=3 uid="uid://b0pvnljv8tko2"]
 
 [ext_resource type="Script" path="res://scripts/intro.gd" id="1_2xd4y"]
 [ext_resource type="Theme" uid="uid://cd4maiy34rjwm" path="res://Assets/theme.tres" id="3_gyy23"]
+[ext_resource type="PackedScene" uid="uid://bw636afcvveo5" path="res://scenes/transitions/transitionController.tscn" id="3_lcwea"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g5p56"]
 albedo_color = Color(0, 0, 0, 1)
@@ -14,9 +15,10 @@ material = SubResource("StandardMaterial3D_g5p56")
 default_font_size = 28
 Button/styles/normal = null
 
-[node name="Node3D" type="Node3D"]
+[node name="Node3D" type="Node3D" node_paths=PackedStringArray("tController")]
 process_mode = 3
 script = ExtResource("1_2xd4y")
+tController = NodePath("Control")
 
 [node name="Node" type="Node" parent="."]
 process_mode = 1
@@ -64,5 +66,7 @@ size_flags_horizontal = 4
 theme = SubResource("Theme_7w5ut")
 text = "CONTINUE
 "
+
+[node name="Control" parent="." instance=ExtResource("3_lcwea")]
 
 [connection signal="pressed" from="Node/CanvasGroup/BoxContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]

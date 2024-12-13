@@ -1,10 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://bvgulltw1epc"]
+[gd_scene load_steps=4 format=3 uid="uid://bvgulltw1epc"]
 
 [ext_resource type="PackedScene" uid="uid://cg7ako1giw26p" path="res://Assets/barrelMilk.glb" id="1_kwt11"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_vxsrt"]
 height = 4.08904
 radius = 1.30634
+
+[sub_resource type="BoxOccluder3D" id="BoxOccluder3D_yduob"]
+size = Vector3(2.7753, 4.37756, 2.75556)
 
 [node name="barrelMilk" instance=ExtResource("1_kwt11")]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
@@ -14,3 +17,7 @@ transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.04484, 0)
 shape = SubResource("CylinderShape3D_vxsrt")
+
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="StaticBody3D" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.98207, 0)
+occluder = SubResource("BoxOccluder3D_yduob")

@@ -1,0 +1,1035 @@
+[gd_scene load_steps=8 format=3 uid="uid://d1fxx7dtjy383"]
+
+[ext_resource type="Script" path="res://scripts/credits.gd" id="1_x7x45"]
+[ext_resource type="Texture2D" uid="uid://bx5nmv125t6e" path="res://Assets/LogoCropped.png" id="1_xfqub"]
+[ext_resource type="AudioStream" uid="uid://bqctye21hbwj3" path="res://audio/music/LRmusic.wav" id="3_5fb04"]
+[ext_resource type="Texture2D" uid="uid://wxecxf5sipic" path="res://Assets/tfmosWhite.png" id="3_se8gs"]
+
+[sub_resource type="Animation" id="Animation_dwnrj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../CanvasGroup/BoxContainer/credits:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../CanvasGroup/BoxContainer/credits/thanks:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../CanvasGroup/BoxContainer/credits/thanks:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../CanvasGroup/BoxContainer/credits/Label:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../CanvasGroup/BoxContainer/credits/Label:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("../CanvasGroup/BoxContainer/credits/slide1:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("../CanvasGroup/BoxContainer/credits/slide1:modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("../CanvasGroup/BoxContainer/credits/slide2:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("../CanvasGroup/BoxContainer/credits/slide2:modulate")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("../CanvasGroup/BoxContainer/credits/slide3:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("../CanvasGroup/BoxContainer/credits/slide3:modulate")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("../CanvasGroup/BoxContainer/credits/slide4:visible")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("../CanvasGroup/BoxContainer/credits/slide4:modulate")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("../CanvasGroup/BoxContainer/credits/slide5:visible")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("../CanvasGroup/BoxContainer/credits/slide5:modulate")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("../CanvasGroup/BoxContainer/VBoxContainer:visible")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/18/type = "value"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("../CanvasGroup/BoxContainer/VBoxContainer:modulate")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_k1gy2"]
+resource_name = "fadeIn"
+length = 60.0
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.99),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../CanvasGroup/BoxContainer/credits:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 30.01),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../CanvasGroup/BoxContainer/credits/thanks:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(2.01, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../CanvasGroup/BoxContainer/credits/thanks:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../CanvasGroup/BoxContainer/credits/Label:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(2.99, 3, 29.99),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../CanvasGroup/BoxContainer/credits/Label:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(3, 3.5, 29.5, 29.99),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("../CanvasGroup/BoxContainer/credits/slide1:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(5.02, 5.03, 10.09),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("../CanvasGroup/BoxContainer/credits/slide1:modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(5.03, 5.53, 9.61, 10.09),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("../CanvasGroup/BoxContainer/credits/slide2:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(10.08, 10.09, 15.01),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("../CanvasGroup/BoxContainer/credits/slide2:modulate")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(10.09, 10.59, 14.53, 15.01),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("../CanvasGroup/BoxContainer/credits/slide3:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(15.01, 15.02, 20),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("../CanvasGroup/BoxContainer/credits/slide3:modulate")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(15.02, 15.52, 19.51, 20),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("../CanvasGroup/BoxContainer/credits/slide4:visible")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(20, 20.01, 25),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("../CanvasGroup/BoxContainer/credits/slide4:modulate")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(20.01, 20.51, 24.51, 25),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("../CanvasGroup/BoxContainer/credits/slide5:visible")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(25, 25.01, 30),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("../CanvasGroup/BoxContainer/credits/slide5:modulate")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(25.01, 25.51, 29.51, 30),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("../CanvasGroup/BoxContainer/VBoxContainer:visible")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(30, 30.01),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/18/type = "value"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("../CanvasGroup/BoxContainer/VBoxContainer:modulate")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(30.01, 30.51, 53.99, 59.97),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/19/type = "method"
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/path = NodePath("..")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = {
+"times": PackedFloat32Array(59.96),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"goToMainMenu"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4chqx"]
+_data = {
+"RESET": SubResource("Animation_dwnrj"),
+"fadeIn": SubResource("Animation_k1gy2")
+}
+
+[node name="Control" type="Control" node_paths=PackedStringArray("fadeanim", "thanks", "credits", "slide1")]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_x7x45")
+fadeanim = NodePath("ColorRect/AnimationPlayer")
+thanks = NodePath("CanvasGroup/BoxContainer/credits/thanks")
+credits = NodePath("CanvasGroup/BoxContainer/credits")
+slide1 = NodePath("CanvasGroup/BoxContainer/credits/slide1")
+
+[node name="CanvasGroup" type="CanvasGroup" parent="."]
+position = Vector2(-576, -319)
+
+[node name="ColorRect" type="ColorRect" parent="CanvasGroup"]
+offset_left = -7.0
+offset_top = -9.0
+offset_right = 1157.0
+offset_bottom = 651.0
+color = Color(0, 0, 0, 1)
+
+[node name="BoxContainer" type="BoxContainer" parent="CanvasGroup"]
+offset_right = 1154.0
+offset_bottom = 645.0
+
+[node name="credits" type="VBoxContainer" parent="CanvasGroup/BoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="thanks" type="Label" parent="CanvasGroup/BoxContainer/credits"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 38
+text = "
+
+
+
+THANK YOU FOR PLAYING!"
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="CanvasGroup/BoxContainer/credits"]
+visible = false
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 38
+text = "CREDITS:"
+horizontal_alignment = 1
+
+[node name="slide1" type="BoxContainer" parent="CanvasGroup/BoxContainer/credits"]
+visible = false
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasGroup/BoxContainer/credits/slide1"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasGroup/BoxContainer/credits/slide1/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="CanvasGroup/BoxContainer/credits/slide1/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(1, 1)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "PROGRAMMING, DEVELOPMENT, 3D MODELLING, ANIMATION, STUFF & THINGS:"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Label2" type="Label" parent="CanvasGroup/BoxContainer/credits/slide1/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "BUMBLE \"DenSad, The Boneless Noodle Worm\" Beelzebub"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="CanvasGroup/BoxContainer/credits/slide1/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasGroup/BoxContainer/credits/slide1/VBoxContainer/HBoxContainer/HBoxContainer2"]
+position = Vector2(180, 147)
+scale = Vector2(0.0805838, 0.0805838)
+texture = ExtResource("1_xfqub")
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="CanvasGroup/BoxContainer/credits/slide1/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="CanvasGroup/BoxContainer/credits/slide1/VBoxContainer/HBoxContainer3"]
+custom_minimum_size = Vector2(1, 1)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "SOUNDTRACK, SOUND DESIGN:"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Label2" type="Label" parent="CanvasGroup/BoxContainer/credits/slide1/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+text = "THE FIFTH MOON OF SANITY"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasGroup/BoxContainer/credits/slide1/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasGroup/BoxContainer/credits/slide1/VBoxContainer/HBoxContainer3/HBoxContainer"]
+position = Vector2(295, 150)
+scale = Vector2(0.193211, 0.193212)
+texture = ExtResource("3_se8gs")
+
+[node name="slide2" type="BoxContainer" parent="CanvasGroup/BoxContainer/credits"]
+visible = false
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasGroup/BoxContainer/credits/slide2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label2" type="Label" parent="CanvasGroup/BoxContainer/credits/slide2/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 38
+text = "ASSETS LOVINGLY EXPROPRIATED:"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasGroup/BoxContainer/credits/slide2/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasGroup/BoxContainer/credits/slide2/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(1, 1)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "WORLD FAMOUS 
+WIDE TOM TOMBADIL"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasGroup/BoxContainer/credits/slide2/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label2" type="Label" parent="CanvasGroup/BoxContainer/credits/slide2/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "AUDIO:"
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="CanvasGroup/BoxContainer/credits/slide2/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "FIRETEAM WHISKEY (FEATURING INTERNET FAMOUS TOM TOMBADIL)
+https://www.youtube.com/watch?v=-61lPpDekUs&t=143s
+
+Something about Crap cars and Maple syrup... with TOM!
+https://www.youtube.com/watch?v=ZxoJiO5XD0U"
+
+[node name="Label3" type="Label" parent="CanvasGroup/BoxContainer/credits/slide2/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "IMAGES:"
+horizontal_alignment = 1
+
+[node name="Label4" type="Label" parent="CanvasGroup/BoxContainer/credits/slide2/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "FIRETEAM WHISKEY (FEATURING INTERNET FAMOUS TOM TOMBADIL)
+https://www.youtube.com/watch?v=-61lPpDekUs&t=143s
+author - ?"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="CanvasGroup/BoxContainer/credits/slide2/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasGroup/BoxContainer/credits/slide2/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "DIGS"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasGroup/BoxContainer/credits/slide2/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="CanvasGroup/BoxContainer/credits/slide2/VBoxContainer/HBoxContainer2/VBoxContainer"]
+layout_mode = 2
+text = "AUDIO:"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="CanvasGroup/BoxContainer/credits/slide2/VBoxContainer/HBoxContainer2/VBoxContainer"]
+layout_mode = 2
+text = "BPL Afterdark: Darkwood with Maverick and Digs!
+https://www.youtube.com/watch?v=OEVlGQBgUVw&list=
+PLGCV9G4ImT3aiXyfF1bYqp9My72zL7nSb&index=3
+
+WBPL Afterdark: Dead Space 2 with Mav and Digs!
+https://www.youtube.com/watch?v=HPmJc3rp4ss&t=2590s
+"
+
+[node name="Label3" type="Label" parent="CanvasGroup/BoxContainer/credits/slide2/VBoxContainer/HBoxContainer2/VBoxContainer"]
+layout_mode = 2
+text = "IMAGES:"
+horizontal_alignment = 1
+
+[node name="Label4" type="Label" parent="CanvasGroup/BoxContainer/credits/slide2/VBoxContainer/HBoxContainer2/VBoxContainer"]
+layout_mode = 2
+text = "Digs profile pic
+AUTHOR - ?
+"
+
+[node name="slide3" type="BoxContainer" parent="CanvasGroup/BoxContainer/credits"]
+visible = false
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="CanvasGroup/BoxContainer/credits/slide3"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasGroup/BoxContainer/credits/slide3/VBoxContainer2"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasGroup/BoxContainer/credits/slide3/VBoxContainer2/HBoxContainer"]
+custom_minimum_size = Vector2(1, 1)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "CROWIND"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasGroup/BoxContainer/credits/slide3/VBoxContainer2/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label2" type="Label" parent="CanvasGroup/BoxContainer/credits/slide3/VBoxContainer2/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "AUDIO:"
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="CanvasGroup/BoxContainer/credits/slide3/VBoxContainer2/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(1, 1)
+layout_mode = 2
+text = "The Courtesy Flush - Shivers 2! A 90's road trip where we get cool with a lot of stuff very quickly.
+https://www.youtube.com/watch?v=SP3buWgDSRs&list=PLPBJ9V1rAWTCxVmWiqWN1QQE6lrLmn2S_
+"
+autowrap_mode = 1
+
+[node name="Label3" type="Label" parent="CanvasGroup/BoxContainer/credits/slide3/VBoxContainer2/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "IMAGES:"
+horizontal_alignment = 1
+
+[node name="Label4" type="Label" parent="CanvasGroup/BoxContainer/credits/slide3/VBoxContainer2/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "The Courtesy Flush - Devil's Daughter! I say! A new case?! MARVELOUS!
+https://www.youtube.com/watch?v=WVFiS8k0MPE&t=6s
+AUTHOR - ?"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="CanvasGroup/BoxContainer/credits/slide3/VBoxContainer2"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasGroup/BoxContainer/credits/slide3/VBoxContainer2/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "GOAT"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasGroup/BoxContainer/credits/slide3/VBoxContainer2/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="CanvasGroup/BoxContainer/credits/slide3/VBoxContainer2/HBoxContainer2/VBoxContainer"]
+layout_mode = 2
+text = "AUDIO:"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="CanvasGroup/BoxContainer/credits/slide3/VBoxContainer2/HBoxContainer2/VBoxContainer"]
+layout_mode = 2
+text = "
+SNIPER ELITE (WITH A COP) PART 1
+https://www.youtube.com/watch?v=x1M6TViJGJ4
+SONG - BATTLE HYMN OF THE MECHWARRIOR"
+
+[node name="Label3" type="Label" parent="CanvasGroup/BoxContainer/credits/slide3/VBoxContainer2/HBoxContainer2/VBoxContainer"]
+layout_mode = 2
+text = "FIRE-TEAM WHISKEY [EPISODE 1]
+https://www.youtube.com/watch?v=DZStYsHgwiM&t=1065s
+SONG - FIRETEAM WHISKEY THEME"
+
+[node name="slide4" type="BoxContainer" parent="CanvasGroup/BoxContainer/credits"]
+visible = false
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="CanvasGroup/BoxContainer/credits/slide4"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasGroup/BoxContainer/credits/slide4/VBoxContainer2"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasGroup/BoxContainer/credits/slide4/VBoxContainer2/HBoxContainer"]
+custom_minimum_size = Vector2(1, 1)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "MR. TEX"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasGroup/BoxContainer/credits/slide4/VBoxContainer2/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label2" type="Label" parent="CanvasGroup/BoxContainer/credits/slide4/VBoxContainer2/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "AUDIO:"
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="CanvasGroup/BoxContainer/credits/slide4/VBoxContainer2/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "FIRE-TEAM WHISKEY [EPISODE 1]
+https://www.youtube.com/watch?v=DZStYsHgwiM&t=1065s
+
+TEX PLAYS XENONAUTS [MODDED TO HELL] PART 17
+https://www.youtube.com/watch?v=nysRnys2_CU
+
+SNIPER ELITE (WITH A COP) PART 1
+https://www.youtube.com/watch?v=x1M6TViJGJ4"
+
+[node name="Label3" type="Label" parent="CanvasGroup/BoxContainer/credits/slide4/VBoxContainer2/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "IMAGES:"
+horizontal_alignment = 1
+
+[node name="Label4" type="Label" parent="CanvasGroup/BoxContainer/credits/slide4/VBoxContainer2/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "SNIPER ELITE (WITH A COP) PART 1
+https://www.youtube.com/watch?v=x1M6TViJGJ4"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="CanvasGroup/BoxContainer/credits/slide4/VBoxContainer2"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasGroup/BoxContainer/credits/slide4/VBoxContainer2/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "IMAGES"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasGroup/BoxContainer/credits/slide4/VBoxContainer2/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label4" type="Label" parent="CanvasGroup/BoxContainer/credits/slide4/VBoxContainer2/HBoxContainer2/VBoxContainer"]
+layout_mode = 2
+text = "AUX logo:"
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="CanvasGroup/BoxContainer/credits/slide4/VBoxContainer2/HBoxContainer2/VBoxContainer"]
+layout_mode = 2
+text = "https://theblackpantslegion.com/the-auxillia/
+AUTHOR - ?"
+
+[node name="Label5" type="Label" parent="CanvasGroup/BoxContainer/credits/slide4/VBoxContainer2/HBoxContainer2/VBoxContainer"]
+layout_mode = 2
+text = "AUX Banner:"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="CanvasGroup/BoxContainer/credits/slide4/VBoxContainer2/HBoxContainer2/VBoxContainer"]
+layout_mode = 2
+text = "https://theblackpantslegion.com/the-auxillia/
+AUTHOR - ?"
+
+[node name="Label6" type="Label" parent="CanvasGroup/BoxContainer/credits/slide4/VBoxContainer2/HBoxContainer2/VBoxContainer"]
+layout_mode = 2
+text = "BPL tapestry:"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="CanvasGroup/BoxContainer/credits/slide4/VBoxContainer2/HBoxContainer2/VBoxContainer"]
+layout_mode = 2
+text = "https://www.patreon.com/BPLTEX
+AUTHOR - ?"
+
+[node name="slide5" type="BoxContainer" parent="CanvasGroup/BoxContainer/credits"]
+visible = false
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="CanvasGroup/BoxContainer/credits/slide5"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasGroup/BoxContainer/credits/slide5/VBoxContainer2"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasGroup/BoxContainer/credits/slide5/VBoxContainer2/HBoxContainer"]
+custom_minimum_size = Vector2(1, 1)
+layout_mode = 2
+size_flags_horizontal = 3
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasGroup/BoxContainer/credits/slide5/VBoxContainer2/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label5" type="Label" parent="CanvasGroup/BoxContainer/credits/slide5/VBoxContainer2/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "BPL PROPAGANDA POSTER:"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="CanvasGroup/BoxContainer/credits/slide5/VBoxContainer2/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Glorious (somewhat) Soviet City-building with Polish Friendship-Assistance
+https://youtu.be/0SBByD0Psdk?si=RFlN0sIWgaxjHbxg
+AUTHOR - ?"
+
+[node name="Label" type="Label" parent="CanvasGroup/BoxContainer/credits/slide5/VBoxContainer2/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label3" type="Label" parent="CanvasGroup/BoxContainer/credits/slide5/VBoxContainer2/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "DISCOUNT DAN:"
+horizontal_alignment = 1
+
+[node name="Label4" type="Label" parent="CanvasGroup/BoxContainer/credits/slide5/VBoxContainer2/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(1, 1)
+layout_mode = 2
+text = "Discount Dan's Totally Legit very much real game that you should fund 
+(not a scam) with cash.
+https://www.youtube.com/watch?v=m7Eu-kZKNDI&list=PLR5zhFCFVb9Ul5DLGzgQ6k4OeYjy2daZ3&index=24"
+autowrap_mode = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="CanvasGroup/BoxContainer/credits/slide5/VBoxContainer2"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasGroup/BoxContainer/credits/slide5/VBoxContainer2/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasGroup/BoxContainer/credits/slide5/VBoxContainer2/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="CanvasGroup/BoxContainer/credits/slide5/VBoxContainer2/HBoxContainer2/VBoxContainer"]
+layout_mode = 2
+text = "THOMPSON SOUND"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="CanvasGroup/BoxContainer/credits/slide5/VBoxContainer2/HBoxContainer2/VBoxContainer"]
+layout_mode = 2
+text = "FORGOTTEN WEAPONS 
+IAN MCCOLLUM"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="CanvasGroup/BoxContainer/credits/slide5/VBoxContainer2/HBoxContainer2/VBoxContainer"]
+layout_mode = 2
+text = "Shooting the Thompsons: Comparing the 1921, 21/28, and M1A1
+https://www.youtube.com/watch?v=smhTeK8T3rg&t=336s"
+horizontal_alignment = 1
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="CanvasGroup/BoxContainer/credits/slide5/VBoxContainer2"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasGroup/BoxContainer/credits/slide5/VBoxContainer2/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "SOUNDTRACK"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasGroup/BoxContainer/credits/slide5/VBoxContainer2/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="CanvasGroup/BoxContainer/credits/slide5/VBoxContainer2/HBoxContainer3/VBoxContainer"]
+layout_mode = 2
+text = "\"JUST VIBING\"
+BY TFMOS"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="CanvasGroup/BoxContainer/credits/slide5/VBoxContainer2/HBoxContainer3/VBoxContainer"]
+layout_mode = 2
+text = "\"FOREST MELODY\"
+BY TFMOS"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="CanvasGroup/BoxContainer/credits/slide5/VBoxContainer2/HBoxContainer3/VBoxContainer"]
+layout_mode = 2
+text = "\"A MY MAS'LENCU DAZHIDALI\"
+FOLKLORE OF THE PSKOV LANDS
+ARRANGED BY TFMOS"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasGroup/BoxContainer"]
+visible = false
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="CanvasGroup/BoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(1, 1)
+layout_mode = 2
+theme_override_font_sizes/font_size = 34
+text = "
+This game was made as a shitpost. A high-effort, low-yield shitpost. My main goal with this project was to say thank you. Thank you to Mr. Tex, Goat, Dep, & everyone else in the BPL, to Mike, Naresar, and everyone at The Courtesy Flush, to Digs & everyone at WBPL-76, & the AUX.
+The things that you do have made an impact on me & countless others, have helped me through some stuff in meatspace, & the community you all have created is one of the most positive I have ever encountered. 
+It is my hope that this little fan-edit/parody thing was entertaining or at least made you chuckle.
+Thank you, you are all awesome, keep doing cool stuff & shitposting!"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="BoxContainer2" type="BoxContainer" parent="CanvasGroup"]
+modulate = Color(1, 1, 1, 0.74902)
+offset_left = 1.0
+offset_top = 619.0
+offset_right = 1316.0
+offset_bottom = 642.0
+
+[node name="Label" type="Label" parent="CanvasGroup/BoxContainer2"]
+layout_mode = 2
+text = "HOLD SHIFT FOR 2x SPEED      PRESS SPACE TO SKIP"
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+layout_mode = 0
+offset_left = -583.0
+offset_top = -330.0
+offset_right = 581.0
+offset_bottom = 331.0
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ColorRect"]
+libraries = {
+"": SubResource("AnimationLibrary_4chqx")
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_5fb04")
+autoplay = true

@@ -63,7 +63,10 @@ libraries = {
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 script = ExtResource("2_lnoop")
+prompt_message = "STEAL CAKE"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0106659, 0.477692, 0.00177002)
 shape = SubResource("BoxShape3D_1y5wc")
+
+[connection signal="interacted" from="StaticBody3D" to="StaticBody3D" method="_on_interacted"]

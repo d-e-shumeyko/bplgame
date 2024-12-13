@@ -1,0 +1,58 @@
+[gd_scene load_steps=11 format=3 uid="uid://c8gk86nc8wu1v"]
+
+[ext_resource type="PackedScene" uid="uid://bhm4f4h5k0iqa" path="res://Assets/pillar.glb" id="1_1dfrf"]
+[ext_resource type="Script" path="res://scripts/pillar.gd" id="2_blot1"]
+[ext_resource type="Script" path="res://scripts/pillarButton.gd" id="2_wlxxy"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_nmfw6"]
+points = PackedVector3Array(-0.3, -1, -5.87404e-05, -0.294244, -1, -0.0585552, -0.294244, -1, 0.0584965, -0.3, 0.999869, -5.87404e-05, -0.294244, 1.03743, -0.0448708, -0.277212, -1, -0.11482, -0.277212, -1, 0.114761, -0.294244, 0.962305, 0.0448121, -0.277212, 1.07371, -0.0879796, -0.249491, -1, -0.16668, -0.249491, -1, 0.166621, -0.277212, 0.92603, 0.0879209, -0.249491, 0.892759, 0.127623, -0.212138, 0.863567, 0.162451, -5.87404e-05, 0.807115, 0.229757, 0.294186, 0.962305, 0.0448121, 0.277153, 1.07371, -0.0879796, -0.16668, 1.16021, -0.191112, -0.212138, 1.13617, -0.16251, -0.249491, 1.10698, -0.127741, -0.212138, -1, -0.212138, -0.212138, -1, 0.212079, -0.16668, -1, 0.249432, -0.16668, 0.839527, 0.191053, -0.11482, 0.821711, 0.212314, -0.0585552, 0.810764, 0.225352, -5.87404e-05, -1, 0.3, 0.0584965, 0.810764, 0.225352, 0.114761, 0.821711, 0.212314, 0.212079, 0.863567, 0.162451, 0.249432, 0.892759, 0.127623, 0.277153, 0.92603, 0.0879209, 0.277153, -1, 0.114761, 0.294186, -1, 0.0584965, 0.3, 0.999869, -5.87404e-05, 0.294186, 1.03743, -0.0448708, 0.277153, -1, -0.11482, 0.249432, -1, -0.16668, 0.249432, 1.10698, -0.127741, 0.212079, 1.13617, -0.16251, 0.166621, 1.16021, -0.191112, -0.0585552, 1.18897, -0.225411, -0.11482, 1.17803, -0.212373, -0.11482, -1, -0.277212, -0.16668, -1, -0.249491, -0.11482, -1, 0.277153, -0.0585552, -1, 0.294186, 0.0584965, -1, 0.294186, 0.114761, -1, 0.277153, 0.166621, 0.839527, 0.191053, 0.166621, -1, 0.249432, 0.212079, -1, 0.212079, 0.249432, -1, 0.166621, 0.3, -1, -5.87404e-05, 0.294186, -1, -0.0585552, 0.212079, -1, -0.212138, 0.166621, -1, -0.249491, 0.114761, -1, -0.277212, 0.114761, 1.17803, -0.212373, 0.0584965, 1.18897, -0.225411, -5.87404e-05, 1.19262, -0.229816, -5.87404e-05, -1, -0.3, -0.0585552, -1, -0.294244, 0.0584965, -1, -0.294244)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1c2qq"]
+albedo_color = Color(0.16446, 0.16446, 0.16446, 1)
+metallic = 0.7
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_ayf2i"]
+material = SubResource("StandardMaterial3D_1c2qq")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n3d22"]
+albedo_color = Color(0.66, 0, 0, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_6vhkr"]
+material = SubResource("StandardMaterial3D_n3d22")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pbkmd"]
+albedo_color = Color(0.66, 0, 0, 1)
+emission_enabled = true
+emission = Color(0.66, 0, 0, 1)
+emission_energy_multiplier = 5.0
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_enn8x"]
+material = SubResource("StandardMaterial3D_pbkmd")
+
+[node name="pillar" instance=ExtResource("1_1dfrf")]
+script = ExtResource("2_blot1")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+script = ExtResource("2_wlxxy")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+visible = false
+shape = SubResource("ConvexPolygonShape3D_nmfw6")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." index="2"]
+transform = Transform3D(0.359448, 0, 0, 0, 0.193703, 0, 0, 0, 0.29954, 0, 1.90523, 0.0370818)
+mesh = SubResource("CylinderMesh_ayf2i")
+
+[node name="buttonOff" type="MeshInstance3D" parent="." index="3"]
+transform = Transform3D(0.2, 0, 0, 0, 0.0276505, 0, 0, 0, 0.2, -0.00127339, 2.12605, 0.0370818)
+mesh = SubResource("CylinderMesh_6vhkr")
+skeleton = NodePath("../buttonOn")
+
+[node name="buttonOn" type="MeshInstance3D" parent="." index="4"]
+transform = Transform3D(0.199, 0, 0, 0, 0.022, 0, 0, 0, 0.199, -0.00127339, 2.11924, 0.0370818)
+visible = false
+mesh = SubResource("CylinderMesh_enn8x")
+skeleton = NodePath("../MeshInstance3D")
+
+[connection signal="interacted" from="StaticBody3D" to="StaticBody3D" method="_on_interacted"]

@@ -1,17 +1,22 @@
-[gd_scene load_steps=5 format=3 uid="uid://c3rwxpcahhhup"]
+[gd_scene load_steps=8 format=3 uid="uid://c3rwxpcahhhup"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_liauy"]
 [ext_resource type="PackedScene" uid="uid://bqa7qgfmddx1i" path="res://scenes/interactRay.tscn" id="2_a7uee"]
+[ext_resource type="AudioStream" uid="uid://kh4luk3mm62x" path="res://audio/sfx/walk.wav" id="3_5lwhe"]
+[ext_resource type="Script" path="res://scripts/hud.gd" id="3_colfy"]
+[ext_resource type="AudioStream" uid="uid://bj82ydjwd5xmi" path="res://audio/sfx/click.wav" id="4_purr8"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_uvwr0"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_qxybx"]
 
-[node name="CharacterBody3D" type="CharacterBody3D"]
+[node name="CharacterBody3D" type="CharacterBody3D" node_paths=PackedStringArray("walkPlayer", "randomSFXPlayer")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 collision_layer = 13
 collision_mask = 3
 script = ExtResource("1_liauy")
+walkPlayer = NodePath("walkPlayer")
+randomSFXPlayer = NodePath("randomSFX")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_uvwr0")
@@ -35,6 +40,7 @@ spot_angle = 23.3332
 
 [node name="RayCast3D" parent="head/Camera3D" instance=ExtResource("2_a7uee")]
 enabled = true
+target_position = Vector3(0, 0, -2)
 
 [node name="CanvasGroup" type="CanvasGroup" parent="."]
 
@@ -46,3 +52,25 @@ offset_bottom = 652.0
 layout_mode = 2
 text = "."
 horizontal_alignment = 1
+
+[node name="hud" type="BoxContainer" parent="CanvasGroup" node_paths=PackedStringArray("label")]
+offset_top = 38.0
+offset_right = 1153.0
+offset_bottom = 142.0
+size_flags_horizontal = 3
+script = ExtResource("3_colfy")
+label = NodePath("Label")
+
+[node name="Label" type="Label" parent="CanvasGroup/hud"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+
+[node name="walkPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_5lwhe")
+volume_db = 12.0
+autoplay = true
+bus = &"SFX"
+
+[node name="randomSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_purr8")
+bus = &"Music"

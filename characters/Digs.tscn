@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://cp3dflmjqtk68"]
+[gd_scene load_steps=10 format=3 uid="uid://cp3dflmjqtk68"]
 
 [ext_resource type="PackedScene" uid="uid://btgmr015wglfx" path="res://characters/bear_ranimated.tscn" id="2_gihvx"]
 [ext_resource type="Script" path="res://scripts/enemy.gd" id="2_r410r"]
+[ext_resource type="AudioStream" uid="uid://dg35a7r6ohade" path="res://audio/digs/digs 07.wav" id="3_qmyc8"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0srjf"]
-size = Vector3(1.95215, 1, 0.994476)
+size = Vector3(1.02564, 1, 1.34513)
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_5hk6l"]
 radius = 8.01514
@@ -21,28 +22,32 @@ data = PackedVector3Array(0, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0, 0.5, 
 radius = 0.314112
 height = 1.65986
 
-[node name="digs" type="CharacterBody3D"]
-axis_lock_angular_y = true
+[node name="digs" type="CharacterBody3D" node_paths=PackedStringArray("barkAudio", "grabArea")]
+axis_lock_angular_x = true
+axis_lock_angular_z = true
 script = ExtResource("2_r410r")
+digsBarks = Array[String](["res://audio/digs/digs 01.wav", "res://audio/digs/digs 02.wav", "res://audio/digs/digs 03.wav", "res://audio/digs/digs 04.wav", "res://audio/digs/digs 05.wav", "res://audio/digs/digs 06.wav", "res://audio/digs/digs 07.wav", "res://audio/digs/digs 08.wav", "res://audio/digs/digs 09.wav", "res://audio/digs/digs 10.wav", "res://audio/digs/digs 11.wav", "res://audio/digs/digs 12.wav", "res://audio/digs/digs 13.wav", "res://audio/digs/digs 14.wav", "res://audio/digs/digs 15.wav", "res://audio/digs/digs 16.wav", "res://audio/digs/digs 17.wav", "res://audio/digs/digs 18.wav", "res://audio/digs/digs 19.wav", "res://audio/digs/digs 20.wav", "res://audio/digs/digs 21.wav", "res://audio/digs/digs 22.wav", "res://audio/digs/digs 23.wav", "res://audio/digs/digs 24.wav", "res://audio/digs/digs 25.wav", "res://audio/digs/digs 26.wav", "res://audio/digs/digs 27.wav", "res://audio/digs/digs 28.wav", "res://audio/digs/digs 29.wav", "res://audio/digs/digs 30.wav", "res://audio/digs/digs 31.wav", "res://audio/digs/digs 32.wav", "res://audio/digs/digs 33.wav", "res://audio/digs/digs 34.wav", "res://audio/digs/digs 35.wav", "res://audio/digs/digs 36.wav"])
+barkAudio = NodePath("barkPlayer3D")
+grabArea = NodePath("areas/grabArea3D")
 
 [node name="BEARanimated" parent="." instance=ExtResource("2_gihvx")]
-transform = Transform3D(-0.15, 0, -2.26494e-08, 0, 0.15, 0, 2.26494e-08, 0, -0.15, 0, -0.866976, 0)
+transform = Transform3D(-0.15, 0, -2.26494e-08, 0, 0.15, 0, 2.26494e-08, 0, -0.15, 0, -0.317453, 0)
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
-target_desired_distance = 2.0
+target_desired_distance = 1.5
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true
 
 [node name="areas" type="Node3D" parent="."]
 
-[node name="Area3D" type="Area3D" parent="areas"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2)
+[node name="grabArea3D" type="Area3D" parent="areas"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.561881, -2)
 collision_layer = 0
-collision_mask = 4
+collision_mask = 12
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="areas/Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00341797, 0, 1.50069)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="areas/grabArea3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.015991, 0, 1.32536)
 shape = SubResource("BoxShape3D_0srjf")
 
 [node name="longArea" type="Area3D" parent="areas"]
@@ -61,7 +66,7 @@ transform = Transform3D(1.00379, 0, 0, 0, 1.00379, 0, 0, 0, 1.00379, 0, 0, 0)
 shape = SubResource("SphereShape3D_5q7i1")
 
 [node name="coneArea" type="Area3D" parent="areas"]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, -0.012338)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0.0529146, -0.012338)
 collision_layer = 0
 collision_mask = 4
 
@@ -78,11 +83,24 @@ shape = SubResource("ConcavePolygonShape3D_gukmg")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.927112, 0)
 shape = SubResource("CapsuleShape3D_nrhbs")
 
+[node name="barkTimer" type="Timer" parent="."]
+
+[node name="barkPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_qmyc8")
+unit_size = 5.0
+max_db = 6.0
+autoplay = true
+max_distance = 75.0
+panning_strength = 2.0
+bus = &"SFX"
+
 [connection signal="navigation_finished" from="NavigationAgent3D" to="." method="_on_navigation_agent_3d_navigation_finished"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
-[connection signal="body_entered" from="areas/Area3D" to="." method="_on_area_3d_body_entered"]
-[connection signal="body_exited" from="areas/Area3D" to="." method="_on_area_3d_body_exited"]
+[connection signal="body_entered" from="areas/grabArea3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="areas/grabArea3D" to="." method="_on_area_3d_body_exited"]
 [connection signal="body_entered" from="areas/longArea" to="." method="_on_long_area_body_entered"]
 [connection signal="body_exited" from="areas/longArea" to="." method="_on_long_area_body_exited"]
 [connection signal="body_entered" from="areas/shortArea" to="." method="_on_short_area_body_entered"]
 [connection signal="body_entered" from="areas/coneArea" to="." method="_on_cone_area_body_entered"]
+[connection signal="timeout" from="barkTimer" to="." method="_on_bark_timer_timeout"]
+[connection signal="finished" from="barkPlayer3D" to="." method="_on_bark_player_3d_finished"]

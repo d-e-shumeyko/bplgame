@@ -1,8 +1,279 @@
-[gd_scene load_steps=2 format=3 uid="uid://eqn66u48s451"]
+[gd_scene load_steps=21 format=3 uid="uid://eqn66u48s451"]
 
 [ext_resource type="PackedScene" uid="uid://btrh2b5dxug8p" path="res://Assets/Texbody.glb" id="1_b26kp"]
+[ext_resource type="Script" path="res://scripts/tex.gd" id="2_y30ls"]
+[ext_resource type="PackedScene" uid="uid://blpb287agqlh5" path="res://characters/texs_head.tscn" id="3_an1bf"]
+[ext_resource type="PackedScene" uid="uid://budob6c1kwnhx" path="res://scenes/decorations/cone.tscn" id="4_dfgms"]
 
-[node name="Texbody" instance=ExtResource("1_b26kp")]
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_pmi5w"]
+radius = 1.67832
+height = 10.0
 
-[node name="smg" parent="." index="0"]
-transform = Transform3D(0.423479, 0, -1.82201, 0, 1.87058, 0, 1.82201, 0, 0.423479, -1.17661, 5.3834, 2.69628)
+[sub_resource type="Animation" id="Animation_nld40"]
+length = 0.001
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0.392204, 5.3834, -0.89876)
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("muzzleflash/OmniLight3D:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("muzzleflash/GPUParticles3D:emitting")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("muzzleflash/GPUParticles3D:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_vs18q"]
+resource_name = "shoot"
+length = 0.1
+step = 0.01
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0.392204, 5.3834, -0.89876, 0.01, 1, 0.392, 5.383, -0.999, 0.1, 1, 0.392204, 5.3834, -0.89876)
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("muzzleflash/OmniLight3D:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.01, 0.06),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("muzzleflash/GPUParticles3D:emitting")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.01, 0.06),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("muzzleflash/GPUParticles3D:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.01, 0.06),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_sfmhp"]
+_data = {
+"RESET": SubResource("Animation_nld40"),
+"shoot": SubResource("Animation_vs18q")
+}
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ja51n"]
+angle_min = -75.0
+angle_max = 75.0
+direction = Vector3(0, 1, 0)
+initial_velocity_min = 0.05
+initial_velocity_max = 0.1
+gravity = Vector3(0, 0, 0)
+
+[sub_resource type="Gradient" id="Gradient_fv18u"]
+offsets = PackedFloat32Array(0.034965, 0.972028)
+colors = PackedColorArray(0.966146, 0.63592, 0.261664, 1, 0, 0, 0, 0.341176)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_p3t30"]
+gradient = SubResource("Gradient_fv18u")
+fill = 2
+fill_from = Vector2(0.497908, 0.51046)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ic4ph"]
+transparency = 1
+albedo_texture = SubResource("GradientTexture2D_p3t30")
+roughness = 0.0
+emission_enabled = true
+emission_energy_multiplier = 16.0
+emission_texture = SubResource("GradientTexture2D_p3t30")
+billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_v4k06"]
+material = SubResource("StandardMaterial3D_ic4ph")
+size = Vector2(0.15, 0.15)
+
+[sub_resource type="Animation" id="Animation_13tyd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../texsHead:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_tff8i"]
+resource_name = "sweep"
+length = 4.0
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../texsHead:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 1, 2, 3.91, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-0.0273089, 0.974081, 0.0515576), Vector3(-0.0279253, 3.12414, 0.0523599), Vector3(-0.0279253, 4.10152, 0.0523599), Vector3(-0.0279253, 0.959931, 0.0523599), Vector3(-0.0279253, 0, 0.0523599)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_uy4ka"]
+_data = {
+"RESET": SubResource("Animation_13tyd"),
+"sweep": SubResource("Animation_tff8i")
+}
+
+[sub_resource type="Gradient" id="Gradient_itaft"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0.0177515, 1)
+colors = PackedColorArray(0.992157, 0.960784, 0.698039, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_5pyks"]
+gradient = SubResource("Gradient_itaft")
+fill_from = Vector2(0.25283, 0.830189)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yb6sx"]
+albedo_texture = SubResource("GradientTexture2D_5pyks")
+emission_enabled = true
+emission = Color(0.992157, 0.960784, 0.698039, 1)
+emission_energy_multiplier = 1.95
+
+[sub_resource type="BoxMesh" id="BoxMesh_me4im"]
+material = SubResource("StandardMaterial3D_yb6sx")
+
+[node name="Texbody" node_paths=PackedStringArray("head") instance=ExtResource("1_b26kp")]
+transform = Transform3D(1, 0, 0, 0, 0.998065, 0.0621808, 0, -0.0621808, 0.998065, 0, 0, 0)
+script = ExtResource("2_y30ls")
+head = NodePath("texsHead")
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="." index="0"]
+axis_lock_angular_x = true
+axis_lock_angular_z = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6, 4.83585, 1.88417)
+shape = SubResource("CapsuleShape3D_pmi5w")
+
+[node name="smg" parent="." index="1"]
+transform = Transform3D(-0.24772, 0.0111179, 1.85407, 0.00199924, 1.87055, -0.0109496, -1.8541, 0.000531547, -0.247727, 0.392204, 5.3834, -0.89876)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="smg" index="0"]
+libraries = {
+"": SubResource("AnimationLibrary_sfmhp")
+}
+
+[node name="muzzleflash" type="Node3D" parent="smg" index="1"]
+transform = Transform3D(1, 4.09782e-08, 0, -7.45058e-09, 1, -7.45058e-09, 0, -9.31323e-10, 1, 1.99232, 0.827939, 0.00984418)
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="smg/muzzleflash" index="0"]
+visible = false
+amount = 15
+lifetime = 0.02
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_ja51n")
+draw_pass_1 = SubResource("QuadMesh_v4k06")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="smg/muzzleflash" index="1"]
+visible = false
+light_color = Color(1, 0.98, 0.6, 1)
+omni_range = 13.988
+
+[node name="head" parent="." index="2"]
+transform = Transform3D(-0.995421, 0.00594357, 0.0954004, 0.00594357, 0.999982, -0.000284162, -0.0954004, 0.000284158, -0.995439, -0.879018, 0.00261828, 1.75549)
+visible = false
+
+[node name="texsHead" parent="." index="3" instance=ExtResource("3_an1bf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.999999, -0.738665, 8.18909, 2.43837)
+
+[node name="Cone" parent="texsHead" index="4" instance=ExtResource("4_dfgms")]
+transform = Transform3D(15, -2.98023e-07, 7.8162e-15, 0, -1.09278e-06, -15, 1.78814e-07, 25, -6.55671e-07, -0.147042, 0.981921, -1.15895)
+
+[node name="Cube" parent="." index="4"]
+transform = Transform3D(-0.995421, 0.00594357, 0.0954003, 0.00594357, 0.999982, -0.000284161, -0.0954003, 0.000284158, -0.995439, -0.879018, 0.00261828, 1.75549)
+
+[node name="sweeper" type="RayCast3D" parent="." index="5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.37581, 0.210318)
+visible = false
+target_position = Vector3(0, 0, 60)
+collision_mask = 256
+debug_shape_custom_color = Color(0.015625, 0, 1, 1)
+debug_shape_thickness = 5
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="sweeper" index="0"]
+libraries = {
+"": SubResource("AnimationLibrary_uy4ka")
+}
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="sweeper" index="1"]
+transform = Transform3D(1, 0, 0, 0, 0.146968, 0, 0, 3.72529e-09, 60.585, -1.84403, -2.10419, 33.7744)
+visible = false
+mesh = SubResource("BoxMesh_me4im")
+
+[node name="Timer" type="Timer" parent="." index="6"]
+autostart = true
+
+[node name="RayCast3D" type="RayCast3D" parent="." index="7"]
+transform = Transform3D(0.999908, -0.00111653, 0.0134797, 0.000841051, 0.999792, 0.0204246, -0.0134997, -0.0204114, 0.999702, 0, 6.92297, -4.45854)
+target_position = Vector3(0, 0, -60)
+collision_mask = 8
+debug_shape_custom_color = Color(0.66, 0, 0, 1)
+debug_shape_thickness = 5
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

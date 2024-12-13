@@ -47,7 +47,7 @@ _data = {
 [node name="Node3D" type="Node3D"]
 
 [node name="can" parent="." instance=ExtResource("1_o7cbi")]
-transform = Transform3D(0.984808, -0.173648, -6.25625e-09, 0.17101, 0.969846, -0.173648, 0.0301537, 0.17101, 0.984808, 0, 0.0565787, 0)
+transform = Transform3D(0.984808, -0.173648, -6.25626e-09, 0.17101, 0.969846, -0.173648, 0.0301537, 0.17101, 0.984808, 0, 0.0565787, 0)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="can"]
 transform = Transform3D(0.984808, 0.173648, 0, -0.173648, 0.984808, 0, 0, 0, 1, -0.00768667, -0.0435933, 0)
@@ -61,3 +61,5 @@ shape = SubResource("BoxShape3D_1y5wc")
 libraries = {
 "": SubResource("AnimationLibrary_0iir8")
 }
+
+[connection signal="interacted" from="can/StaticBody3D" to="can/StaticBody3D" method="_on_interacted"]

@@ -17,3 +17,9 @@ func _ready() -> void:
 
 func _on_drag_ended(_value_changed: bool) -> void:
 		AudioServer.set_bus_volume_db(bus_index,linear_to_db(value))
+		if bus_name == "Master":
+			GlobalVariables.mainLoud = value
+		elif bus_name == "Music":
+			GlobalVariables.musicLoud = value
+		elif bus_name == "SFX":
+			GlobalVariables.sfxLoud = value

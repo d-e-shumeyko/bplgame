@@ -1,9 +1,12 @@
-[gd_scene load_steps=3 format=3 uid="uid://drt365ofwojew"]
+[gd_scene load_steps=4 format=3 uid="uid://drt365ofwojew"]
 
 [ext_resource type="PackedScene" uid="uid://d4aa32assi63n" path="res://Assets/sackTomats.glb" id="1_hfsgc"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_gofoj"]
 size = Vector3(1.88525, 3.90228, 0.759888)
+
+[sub_resource type="BoxOccluder3D" id="BoxOccluder3D_q2evb"]
+size = Vector3(2.35843, 4.17656, 1)
 
 [node name="sackTomats" instance=ExtResource("1_hfsgc")]
 transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0, 0)
@@ -13,3 +16,7 @@ transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0, 0)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0656738, 1.95792, -0.000305179)
 shape = SubResource("BoxShape3D_gofoj")
+
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="." index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0656738, 1.92803, -0.000305179)
+occluder = SubResource("BoxOccluder3D_q2evb")

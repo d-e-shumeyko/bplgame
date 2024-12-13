@@ -39,6 +39,16 @@ layout_mode = 2
 size_flags_horizontal = 4
 text = "Options"
 
+[node name="controls" type="Button" parent="CanvasGroup/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Controls"
+
+[node name="quit" type="Button" parent="CanvasGroup/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Quit"
+
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasGroup/VBoxContainer"]
 visible = false
 layout_mode = 2
@@ -101,16 +111,206 @@ value = 1.0
 script = ExtResource("2_wn8gr")
 bus_name = "SFX"
 
+[node name="CheckBox" type="CheckBox" parent="CanvasGroup/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Colorblind HUD"
+
 [node name="backButton" type="Button" parent="CanvasGroup/VBoxContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 text = "Back"
 
+[node name="controls2" type="VBoxContainer" parent="CanvasGroup/VBoxContainer"]
+visible = false
+layout_mode = 2
+
+[node name="BoxContainer" type="BoxContainer" parent="CanvasGroup/VBoxContainer/controls2"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasGroup/VBoxContainer/controls2/BoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="CanvasGroup/VBoxContainer/controls2/BoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "MOVMENT:"
+horizontal_alignment = 2
+
+[node name="Label2" type="Label" parent="CanvasGroup/VBoxContainer/controls2/BoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "W,A,S,D"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="CanvasGroup/VBoxContainer/controls2/BoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="BoxContainer2" type="BoxContainer" parent="CanvasGroup/VBoxContainer/controls2"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasGroup/VBoxContainer/controls2/BoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="CanvasGroup/VBoxContainer/controls2/BoxContainer2/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "INTERACT:"
+horizontal_alignment = 2
+
+[node name="Label2" type="Label" parent="CanvasGroup/VBoxContainer/controls2/BoxContainer2/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "E"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="CanvasGroup/VBoxContainer/controls2/BoxContainer2/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="BoxContainer3" type="BoxContainer" parent="CanvasGroup/VBoxContainer/controls2"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasGroup/VBoxContainer/controls2/BoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="CanvasGroup/VBoxContainer/controls2/BoxContainer3/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "SPRINT:"
+horizontal_alignment = 2
+
+[node name="Label2" type="Label" parent="CanvasGroup/VBoxContainer/controls2/BoxContainer3/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "SHIFT"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="CanvasGroup/VBoxContainer/controls2/BoxContainer3/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="BoxContainer4" type="BoxContainer" parent="CanvasGroup/VBoxContainer/controls2"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasGroup/VBoxContainer/controls2/BoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="CanvasGroup/VBoxContainer/controls2/BoxContainer4/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "CROUCH:"
+horizontal_alignment = 2
+
+[node name="Label2" type="Label" parent="CanvasGroup/VBoxContainer/controls2/BoxContainer4/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "C"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="CanvasGroup/VBoxContainer/controls2/BoxContainer4/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="BoxContainer5" type="BoxContainer" parent="CanvasGroup/VBoxContainer/controls2"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasGroup/VBoxContainer/controls2/BoxContainer5"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="CanvasGroup/VBoxContainer/controls2/BoxContainer5/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "JUMP:"
+horizontal_alignment = 2
+
+[node name="Label2" type="Label" parent="CanvasGroup/VBoxContainer/controls2/BoxContainer5/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "SPACE"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="CanvasGroup/VBoxContainer/controls2/BoxContainer5/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="BoxContainer6" type="BoxContainer" parent="CanvasGroup/VBoxContainer/controls2"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasGroup/VBoxContainer/controls2/BoxContainer6"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="CanvasGroup/VBoxContainer/controls2/BoxContainer6/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "FLASHLIGHT:"
+horizontal_alignment = 2
+
+[node name="Label2" type="Label" parent="CanvasGroup/VBoxContainer/controls2/BoxContainer6/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "F"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="CanvasGroup/VBoxContainer/controls2/BoxContainer6/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="backC" type="Button" parent="CanvasGroup/VBoxContainer/controls2"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Back"
+
+[node name="quit2" type="VBoxContainer" parent="CanvasGroup/VBoxContainer"]
+visible = false
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasGroup/VBoxContainer/quit2"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Are you sure?
+All progress will be lost:"
+horizontal_alignment = 1
+
+[node name="BoxContainer" type="BoxContainer" parent="CanvasGroup/VBoxContainer/quit2"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasGroup/VBoxContainer/quit2/BoxContainer"]
+layout_mode = 2
+
+[node name="toMenu" type="Button" parent="CanvasGroup/VBoxContainer/quit2/BoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Yes"
+
+[node name="Label" type="Label" parent="CanvasGroup/VBoxContainer/quit2/BoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "        "
+
+[node name="toOptions" type="Button" parent="CanvasGroup/VBoxContainer/quit2/BoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Back to Game"
+
 [node name="gameManager" type="Node3D" parent="."]
 script = ExtResource("1_5e4mr")
 
 [connection signal="pressed" from="CanvasGroup/VBoxContainer/optionsButton" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="CanvasGroup/VBoxContainer/controls" to="." method="_on_controls_pressed"]
+[connection signal="pressed" from="CanvasGroup/VBoxContainer/quit" to="." method="_on_quit_pressed"]
 [connection signal="drag_ended" from="CanvasGroup/VBoxContainer/VBoxContainer/master/HSlider" to="CanvasGroup/VBoxContainer/VBoxContainer/master/HSlider" method="_on_drag_ended"]
 [connection signal="drag_ended" from="CanvasGroup/VBoxContainer/VBoxContainer/music/HSlider" to="CanvasGroup/VBoxContainer/VBoxContainer/music/HSlider" method="_on_drag_ended"]
 [connection signal="drag_ended" from="CanvasGroup/VBoxContainer/VBoxContainer/sfx/HSlider" to="CanvasGroup/VBoxContainer/VBoxContainer/sfx/HSlider" method="_on_drag_ended"]
+[connection signal="toggled" from="CanvasGroup/VBoxContainer/VBoxContainer/CheckBox" to="." method="_on_check_box_toggled"]
 [connection signal="pressed" from="CanvasGroup/VBoxContainer/VBoxContainer/backButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="CanvasGroup/VBoxContainer/controls2/backC" to="." method="_on_back_c_pressed"]
+[connection signal="pressed" from="CanvasGroup/VBoxContainer/quit2/BoxContainer/HBoxContainer/toMenu" to="." method="_on_to_menu_pressed"]
+[connection signal="pressed" from="CanvasGroup/VBoxContainer/quit2/BoxContainer/HBoxContainer/toOptions" to="." method="_on_to_options_pressed"]

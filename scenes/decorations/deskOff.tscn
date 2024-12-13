@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://btbe885ldm1qb"]
+
+[ext_resource type="PackedScene" uid="uid://b8x37bkthmk06" path="res://Assets/desk.glb" id="1_paioh"]
+[ext_resource type="PackedScene" uid="uid://b30jiisnwjan" path="res://Assets/crt.glb" id="2_0fwbo"]
+[ext_resource type="PackedScene" uid="uid://iphyq8hx2hgd" path="res://Assets/pc.glb" id="3_r7hmx"]
+[ext_resource type="PackedScene" uid="uid://bduc433mi8don" path="res://Assets/officeChair.glb" id="4_ax48i"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="desk" parent="." instance=ExtResource("1_paioh")]
+
+[node name="crt" parent="desk" instance=ExtResource("2_0fwbo")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 5.08508, 0)
+
+[node name="pc" parent="desk" instance=ExtResource("3_r7hmx")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 4.39334, 0)
+
+[node name="officeChair" parent="desk" instance=ExtResource("4_ax48i")]
+transform = Transform3D(-2, 0, -3.01992e-07, 0, 2, 0, 3.01992e-07, 0, -2, 0, 0, 1.16863)

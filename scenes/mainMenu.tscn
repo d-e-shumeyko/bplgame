@@ -1,0 +1,228 @@
+[gd_scene load_steps=6 format=3 uid="uid://vw5ti4ptywiu"]
+
+[ext_resource type="Texture2D" uid="uid://cqpsvpec24obq" path="res://Assets/cellar.png" id="1_0k5dl"]
+[ext_resource type="Script" path="res://scripts/mainMenu.gd" id="1_wadm8"]
+[ext_resource type="Texture2D" uid="uid://2b0trqamd3s4" path="res://Assets/forest.png" id="2_3vqd2"]
+[ext_resource type="AudioStream" uid="uid://3fjcmu5nvl3" path="res://audio/music/forestMusic.wav" id="2_20pwn"]
+[ext_resource type="Texture2D" uid="uid://dxem77ot0lqte" path="res://Assets/LR.png" id="3_50mnd"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1, 0.997916)
+
+[node name="CanvasGroup" type="CanvasGroup" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasGroup"]
+offset_left = -4.0
+offset_top = -6.0
+offset_right = 1156.0
+offset_bottom = 654.0
+color = Color(0, 0, 0, 1)
+
+[node name="BoxContainer" type="BoxContainer" parent="CanvasGroup"]
+offset_top = 142.0
+offset_right = 1146.0
+offset_bottom = 642.0
+
+[node name="main" type="VBoxContainer" parent="CanvasGroup/BoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="CanvasGroup/BoxContainer/main"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 48
+text = "STEALING FROM 
+THE BLACK PANTS LEGION"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasGroup/BoxContainer/main"]
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="CanvasGroup/BoxContainer/main/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasGroup/BoxContainer/main/HBoxContainer"]
+layout_mode = 2
+
+[node name="start" type="Button" parent="CanvasGroup/BoxContainer/main/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "START GAME"
+
+[node name="scene" type="Button" parent="CanvasGroup/BoxContainer/main/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "SCENE SELECT"
+
+[node name="options" type="Button" parent="CanvasGroup/BoxContainer/main/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "OPTIONS"
+
+[node name="credits" type="Button" parent="CanvasGroup/BoxContainer/main/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "CREDITS
+"
+
+[node name="quit" type="Button" parent="CanvasGroup/BoxContainer/main/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "EXIT"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasGroup/BoxContainer/main/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="options" type="VBoxContainer" parent="CanvasGroup/BoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="CanvasGroup/BoxContainer/options"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasGroup/BoxContainer/options/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasGroup/BoxContainer/options/HBoxContainer3"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasGroup/BoxContainer/options/HBoxContainer3/VBoxContainer"]
+layout_mode = 2
+text = "OPTIONS"
+horizontal_alignment = 1
+
+[node name="main" type="Label" parent="CanvasGroup/BoxContainer/options/HBoxContainer3/VBoxContainer"]
+layout_mode = 2
+text = "GAME VOLUME:"
+horizontal_alignment = 1
+
+[node name="mainSlider" type="HSlider" parent="CanvasGroup/BoxContainer/options/HBoxContainer3/VBoxContainer"]
+layout_mode = 2
+max_value = 1.0
+step = 0.001
+value = 1.0
+
+[node name="MUSIC" type="Label" parent="CanvasGroup/BoxContainer/options/HBoxContainer3/VBoxContainer"]
+layout_mode = 2
+text = "MUSIC:
+"
+horizontal_alignment = 1
+
+[node name="musicSlider" type="HSlider" parent="CanvasGroup/BoxContainer/options/HBoxContainer3/VBoxContainer"]
+layout_mode = 2
+max_value = 1.0
+step = 0.001
+value = 1.0
+
+[node name="Label2" type="Label" parent="CanvasGroup/BoxContainer/options/HBoxContainer3/VBoxContainer"]
+layout_mode = 2
+text = "SFX:"
+horizontal_alignment = 1
+
+[node name="sfxSlider" type="HSlider" parent="CanvasGroup/BoxContainer/options/HBoxContainer3/VBoxContainer"]
+layout_mode = 2
+max_value = 1.0
+step = 0.001
+value = 1.0
+
+[node name="backO" type="Button" parent="CanvasGroup/BoxContainer/options/HBoxContainer3/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "BACK"
+
+[node name="Label2" type="Label" parent="CanvasGroup/BoxContainer/options/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="select" type="VBoxContainer" parent="CanvasGroup/BoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="CanvasGroup/BoxContainer/select"]
+layout_mode = 2
+text = "SELECT SCENE:"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasGroup/BoxContainer/select"]
+layout_mode = 2
+
+[node name="beanhouse" type="VBoxContainer" parent="CanvasGroup/BoxContainer/select/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="CanvasGroup/BoxContainer/select/HBoxContainer/beanhouse"]
+layout_mode = 2
+text = "LEVEL 1"
+horizontal_alignment = 1
+
+[node name="scene1" type="Button" parent="CanvasGroup/BoxContainer/select/HBoxContainer/beanhouse"]
+layout_mode = 2
+size_flags_horizontal = 4
+icon = ExtResource("1_0k5dl")
+
+[node name="forest" type="VBoxContainer" parent="CanvasGroup/BoxContainer/select/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="CanvasGroup/BoxContainer/select/HBoxContainer/forest"]
+layout_mode = 2
+text = "LEVEL 2"
+horizontal_alignment = 1
+
+[node name="scene2" type="Button" parent="CanvasGroup/BoxContainer/select/HBoxContainer/forest"]
+layout_mode = 2
+size_flags_horizontal = 4
+icon = ExtResource("2_3vqd2")
+
+[node name="lr" type="VBoxContainer" parent="CanvasGroup/BoxContainer/select/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="CanvasGroup/BoxContainer/select/HBoxContainer/lr"]
+layout_mode = 2
+text = "LEVEL 3"
+horizontal_alignment = 1
+
+[node name="scene3" type="Button" parent="CanvasGroup/BoxContainer/select/HBoxContainer/lr"]
+layout_mode = 2
+size_flags_horizontal = 4
+icon = ExtResource("3_50mnd")
+
+[node name="backS" type="Button" parent="CanvasGroup/BoxContainer/select"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "BACK"
+
+[node name="Node3D" type="Node3D" parent="." node_paths=PackedStringArray("main", "options", "sceneSelect", "mainSlider", "musicSlider", "sfxSlider")]
+script = ExtResource("1_wadm8")
+main = NodePath("../CanvasGroup/BoxContainer/main")
+options = NodePath("../CanvasGroup/BoxContainer/options")
+sceneSelect = NodePath("../CanvasGroup/BoxContainer/select")
+mainSlider = NodePath("../CanvasGroup/BoxContainer/options/HBoxContainer3/VBoxContainer/mainSlider")
+musicSlider = NodePath("../CanvasGroup/BoxContainer/options/HBoxContainer3/VBoxContainer/musicSlider")
+sfxSlider = NodePath("../CanvasGroup/BoxContainer/options/HBoxContainer3/VBoxContainer/sfxSlider")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_20pwn")
+autoplay = true
+bus = &"Music"
+
+[connection signal="pressed" from="CanvasGroup/BoxContainer/main/HBoxContainer/VBoxContainer/start" to="Node3D" method="_on_start_pressed"]
+[connection signal="pressed" from="CanvasGroup/BoxContainer/main/HBoxContainer/VBoxContainer/scene" to="Node3D" method="_on_scene_pressed"]
+[connection signal="pressed" from="CanvasGroup/BoxContainer/main/HBoxContainer/VBoxContainer/options" to="Node3D" method="_on_options_pressed"]
+[connection signal="pressed" from="CanvasGroup/BoxContainer/main/HBoxContainer/VBoxContainer/credits" to="Node3D" method="_on_credits_pressed"]
+[connection signal="pressed" from="CanvasGroup/BoxContainer/main/HBoxContainer/VBoxContainer/quit" to="Node3D" method="_on_quit_pressed"]
+[connection signal="drag_ended" from="CanvasGroup/BoxContainer/options/HBoxContainer3/VBoxContainer/mainSlider" to="Node3D" method="_on_main_slider_drag_ended"]
+[connection signal="drag_ended" from="CanvasGroup/BoxContainer/options/HBoxContainer3/VBoxContainer/musicSlider" to="Node3D" method="_on_music_slider_drag_ended"]
+[connection signal="drag_ended" from="CanvasGroup/BoxContainer/options/HBoxContainer3/VBoxContainer/sfxSlider" to="Node3D" method="_on_sfx_slider_drag_ended"]
+[connection signal="pressed" from="CanvasGroup/BoxContainer/options/HBoxContainer3/VBoxContainer/backO" to="Node3D" method="_on_back_o_pressed"]
+[connection signal="pressed" from="CanvasGroup/BoxContainer/select/HBoxContainer/beanhouse/scene1" to="Node3D" method="_on_scene_1_pressed"]
+[connection signal="pressed" from="CanvasGroup/BoxContainer/select/HBoxContainer/forest/scene2" to="Node3D" method="_on_scene_2_pressed"]
+[connection signal="pressed" from="CanvasGroup/BoxContainer/select/HBoxContainer/lr/scene3" to="Node3D" method="_on_scene_3_pressed"]
+[connection signal="pressed" from="CanvasGroup/BoxContainer/select/backS" to="Node3D" method="_on_back_s_pressed"]

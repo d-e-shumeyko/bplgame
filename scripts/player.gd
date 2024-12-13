@@ -20,6 +20,7 @@ const BASE_FOV = 75.0
 const FOV_CHANGE = 1.5
 
 #signal is_running(is_running:bool)
+
 var was_run : bool = false :
 	get:
 		return was_run
@@ -43,7 +44,7 @@ var was_interacted : bool = false :
 		return was_interacted
 	set(value):
 		was_interacted = value
-
+var isMoving = false
 var flashlight_on = false
 
 @onready var head = $head
@@ -51,12 +52,16 @@ var flashlight_on = false
 @onready var body = $Node3D
 @onready var raycast : RayCast3D = $head/Camera3D/RayCast3D
 @onready var flashlight = $head/Camera3D/SpotLight3D
+@export var walkPlayer : AudioStreamPlayer
+@export var randomSFXPlayer: AudioStreamPlayer
 
 
 
 
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	walkPlayer.autoplay = true
+	walkPlayer.stream_paused = true
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
@@ -73,6 +78,7 @@ func _physics_process(delta: float) -> void:
 		velocity += get_gravity() * delta
 		#Flashlight
 	if (Input.is_action_just_pressed("Flashlight")):
+		randomSFXPlayer.play()
 		if flashlight_on == false:
 			flashlight.show()
 			flashlight_on = true
@@ -120,7 +126,29 @@ func _physics_process(delta: float) -> void:
 	var target_fov = BASE_FOV + FOV_CHANGE * velocity_clamped
 	camera.fov = lerp(camera.fov, target_fov, delta * 8.0)
 	
+	if velocity != Vector3.ZERO:
+		isMoving ==true
+		if is_on_floor():
+			if !walkPlayer.playing:
+				walkPlayer.pitch_scale = randf_range(.9,1.1)
+				walkPlayer.play()
+			if walkPlayer.playing:
+				if Input.is_action_just_pressed("Sprint"):
+					walkPlayer.stop()
+					walkPlayer.pitch_scale = randf_range(1.6,1.8)
+					walkPlayer.play()
+				elif Input.is_action_just_released("Sprint"):
+					walkPlayer.stop()
+					walkPlayer.pitch_scale = randf_range(.9,1.1)
+					walkPlayer.play()
+		else: 
+			walkPlayer.stop()
+	else:
+		isMoving = false
+		walkPlayer.stream_paused = true
+	
 
+	
 	move_and_slide()
 
 func run():

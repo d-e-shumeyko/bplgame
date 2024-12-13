@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://dx43s2me8yoa4"]
+[gd_scene load_steps=7 format=3 uid="uid://dx43s2me8yoa4"]
 
 [ext_resource type="PackedScene" uid="uid://nvabcgefpo2b" path="res://Assets/toob.glb" id="1_dso3a"]
+[ext_resource type="Script" path="res://scripts/toobScript.gd" id="2_mxynf"]
 
 [sub_resource type="Animation" id="Animation_genhr"]
 length = 0.001
@@ -20,6 +21,7 @@ tracks/0/keys = {
 [sub_resource type="Animation" id="Animation_btbqi"]
 resource_name = "turn"
 length = 10.0
+loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -51,7 +53,10 @@ libraries = {
 }
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." index="2"]
+script = ExtResource("2_mxynf")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0290451, -1.78814e-07, 0)
 shape = SubResource("BoxShape3D_yi3rd")
+
+[connection signal="interacted" from="StaticBody3D" to="StaticBody3D" method="_on_interacted"]

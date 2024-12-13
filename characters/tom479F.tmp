@@ -1,0 +1,153 @@
+[gd_scene load_steps=59 format=3 uid="uid://c8id5c5fea70v"]
+
+[ext_resource type="Script" path="res://scripts/tom.gd" id="1_h8h8j"]
+[ext_resource type="AudioStream" uid="uid://dvq68oitj0n6l" path="res://audio/tom/tom 01.wav" id="2_4obka"]
+[ext_resource type="PackedScene" uid="uid://bkiblm8xkxqot" path="res://characters/tomBase.tscn" id="2_lgm0n"]
+[ext_resource type="AudioStream" uid="uid://cv1qlc0golm7r" path="res://audio/tom/tom 30.wav" id="3_urst0"]
+[ext_resource type="AudioStream" uid="uid://dgjm50b25a06k" path="res://audio/tom/tom 02.wav" id="3_xv07x"]
+[ext_resource type="AudioStream" uid="uid://c16ty7yd2fsnq" path="res://audio/tom/tom 03.wav" id="4_ie0it"]
+[ext_resource type="AudioStream" uid="uid://gpgs74w6165b" path="res://audio/tom/tom 04.wav" id="5_e3je5"]
+[ext_resource type="AudioStream" uid="uid://c7vta7pr1d5ka" path="res://audio/tom/tom 05.wav" id="6_3lnro"]
+[ext_resource type="AudioStream" uid="uid://6j81tcx3hndt" path="res://audio/tom/tom 06.wav" id="7_3otad"]
+[ext_resource type="AudioStream" uid="uid://r0molm0sh5me" path="res://audio/tom/tom 07.wav" id="8_2ryi6"]
+[ext_resource type="AudioStream" uid="uid://bjrhfqfoyf4qn" path="res://audio/tom/tom 08.wav" id="9_mxcum"]
+[ext_resource type="AudioStream" uid="uid://k8p70seti5fa" path="res://audio/tom/tom 09.wav" id="10_cim4k"]
+[ext_resource type="AudioStream" uid="uid://ddqxk4o6lt6rf" path="res://audio/tom/tom 10.wav" id="11_wsutw"]
+[ext_resource type="AudioStream" uid="uid://ruby3iw2dbq2" path="res://audio/tom/tom 11.wav" id="12_kmedm"]
+[ext_resource type="AudioStream" uid="uid://btqjd75r0knm8" path="res://audio/tom/tom 12.wav" id="13_3y2pp"]
+[ext_resource type="AudioStream" uid="uid://byjesfjumf16b" path="res://audio/tom/tom 13.wav" id="14_nbvws"]
+[ext_resource type="AudioStream" uid="uid://cagl1h0pjbjuw" path="res://audio/tom/tom 14.wav" id="15_lppt8"]
+[ext_resource type="AudioStream" uid="uid://pf7l5oxpl8ay" path="res://audio/tom/tom 15.wav" id="16_j3q1y"]
+[ext_resource type="AudioStream" uid="uid://o404m7m6phu0" path="res://audio/tom/tom 16.wav" id="17_rix3y"]
+[ext_resource type="AudioStream" uid="uid://cqohgqsv6qbdg" path="res://audio/tom/tom 17.wav" id="18_ejpa2"]
+[ext_resource type="AudioStream" uid="uid://b2c5xvc4r2ypg" path="res://audio/tom/tom 18.wav" id="19_jq18f"]
+[ext_resource type="AudioStream" uid="uid://cd23mujp1owdb" path="res://audio/tom/tom 19.wav" id="20_d6gc1"]
+[ext_resource type="AudioStream" uid="uid://dg7sgun47fwjk" path="res://audio/tom/tom 20.wav" id="21_hwxrt"]
+[ext_resource type="AudioStream" uid="uid://3ae3da6n8cd4" path="res://audio/tom/tom 21.wav" id="22_oh34v"]
+[ext_resource type="AudioStream" uid="uid://c84xjipcde6u0" path="res://audio/tom/tom 22.wav" id="23_0t3bx"]
+[ext_resource type="AudioStream" uid="uid://c3hjei8do0qyo" path="res://audio/tom/tom 23.wav" id="24_0pnoa"]
+[ext_resource type="AudioStream" uid="uid://cyn0wj61rryo6" path="res://audio/tom/tom 24.wav" id="25_wjkhw"]
+[ext_resource type="AudioStream" uid="uid://cc30277rimh6d" path="res://audio/tom/tom 25.wav" id="26_tvg4b"]
+[ext_resource type="AudioStream" uid="uid://btse0the6r7j4" path="res://audio/tom/tom 26.wav" id="27_tf1g2"]
+[ext_resource type="AudioStream" uid="uid://wjq2c0fyg1a8" path="res://audio/tom/tom 27.wav" id="28_nj1kh"]
+[ext_resource type="AudioStream" uid="uid://db8yo5qx6fpg" path="res://audio/tom/tom 28.wav" id="29_jprrl"]
+[ext_resource type="AudioStream" uid="uid://bcl1mcy12iwpg" path="res://audio/tom/tom 29.wav" id="30_nih38"]
+[ext_resource type="AudioStream" uid="uid://4efuw0clmtj2" path="res://audio/tom/tom 31.wav" id="32_qy6ja"]
+[ext_resource type="AudioStream" uid="uid://c1ge6sa3klqls" path="res://audio/tom/tom 32.wav" id="33_rkujh"]
+[ext_resource type="AudioStream" uid="uid://liyravj2xxp0" path="res://audio/tom/tom 33.wav" id="34_4k7e6"]
+[ext_resource type="AudioStream" uid="uid://b8rdsqx67ht8r" path="res://audio/tom/tom 34.wav" id="35_bdt77"]
+[ext_resource type="AudioStream" uid="uid://dmvicbhnkikpu" path="res://audio/tom/tom 35.wav" id="36_733as"]
+[ext_resource type="AudioStream" uid="uid://4iryc25ojha5" path="res://audio/tom/tom 36.wav" id="37_gxk2o"]
+[ext_resource type="AudioStream" uid="uid://btnd1hakphyvo" path="res://audio/tom/tom 37.wav" id="38_ry0r5"]
+[ext_resource type="AudioStream" uid="uid://beravv2femv2h" path="res://audio/tom/tom 38.wav" id="39_q6r6k"]
+[ext_resource type="AudioStream" uid="uid://bc68dh8dv302p" path="res://audio/tom/tom 39.wav" id="40_qdsba"]
+[ext_resource type="AudioStream" uid="uid://cnvd83m103gem" path="res://audio/tom/tom 40.wav" id="41_8n0f4"]
+[ext_resource type="AudioStream" uid="uid://bhev6aya7q5xj" path="res://audio/tom/tom 41.wav" id="42_4f0ag"]
+[ext_resource type="AudioStream" uid="uid://cm57yahe07doy" path="res://audio/tom/tom 42.wav" id="43_odxqn"]
+[ext_resource type="AudioStream" uid="uid://bvq7ydhg8rvef" path="res://audio/tom/tom 43.wav" id="44_ldxlo"]
+[ext_resource type="AudioStream" uid="uid://dwlkujsybtrrp" path="res://audio/tom/tom 44.wav" id="45_v0spi"]
+[ext_resource type="AudioStream" uid="uid://dvfnax7goa3e5" path="res://audio/tom/tom 45.wav" id="46_o6pg4"]
+[ext_resource type="AudioStream" uid="uid://dmppxtkk5ll4l" path="res://audio/tom/tom 46.wav" id="47_5ki3n"]
+[ext_resource type="AudioStream" uid="uid://cfrqoxffcl8b8" path="res://audio/tom/tom 47.wav" id="48_o2xy7"]
+[ext_resource type="AudioStream" uid="uid://cfie1lcayto8t" path="res://audio/tom/tom 48.wav" id="49_75a3v"]
+[ext_resource type="AudioStream" uid="uid://bg1o45qc7d0vf" path="res://audio/tom/tom 49.wav" id="50_1y5ag"]
+[ext_resource type="AudioStream" uid="uid://2yraqm3wstv3" path="res://audio/tom/tom 50.wav" id="51_okjge"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7l8sa"]
+radius = 0.776766
+height = 2.55553
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_w0upe"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_5xbhk"]
+points = PackedVector3Array(0, 0.5, 0.5, 0.5, -0.5, 0.5, 0, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_if2ib"]
+points = PackedVector3Array(0, 0.5, 0.5, 0.5, -0.5, 0.5, 0, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_81trf"]
+size = Vector3(15.9865, 4.42944, 30.3534)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wt6p7"]
+size = Vector3(3.24609, 4.42395, 1.76617)
+
+[node name="CharacterBody3D" type="CharacterBody3D" node_paths=PackedStringArray("tomAudio", "timer")]
+axis_lock_angular_y = true
+script = ExtResource("1_h8h8j")
+tomAudio = NodePath("AudioStreamPlayer3D")
+tomBarks = Array[AudioStreamWAV]([ExtResource("2_4obka"), ExtResource("3_xv07x"), ExtResource("4_ie0it"), ExtResource("5_e3je5"), ExtResource("6_3lnro"), ExtResource("7_3otad"), ExtResource("8_2ryi6"), ExtResource("9_mxcum"), ExtResource("10_cim4k"), ExtResource("11_wsutw"), ExtResource("12_kmedm"), ExtResource("13_3y2pp"), ExtResource("14_nbvws"), ExtResource("15_lppt8"), ExtResource("16_j3q1y"), ExtResource("17_rix3y"), ExtResource("18_ejpa2"), ExtResource("19_jq18f"), ExtResource("20_d6gc1"), ExtResource("21_hwxrt"), ExtResource("22_oh34v"), ExtResource("23_0t3bx"), ExtResource("24_0pnoa"), ExtResource("25_wjkhw"), ExtResource("26_tvg4b"), ExtResource("27_tf1g2"), ExtResource("28_nj1kh"), ExtResource("29_jprrl"), ExtResource("30_nih38"), ExtResource("3_urst0"), ExtResource("32_qy6ja"), ExtResource("33_rkujh"), ExtResource("34_4k7e6"), ExtResource("35_bdt77"), ExtResource("36_733as"), ExtResource("37_gxk2o"), ExtResource("38_ry0r5"), ExtResource("39_q6r6k"), ExtResource("40_qdsba"), ExtResource("41_8n0f4"), ExtResource("42_4f0ag"), ExtResource("43_odxqn"), ExtResource("44_ldxlo"), ExtResource("45_v0spi"), ExtResource("46_o6pg4"), ExtResource("47_5ki3n"), ExtResource("48_o2xy7"), ExtResource("49_75a3v"), ExtResource("50_1y5ag"), ExtResource("51_okjge")])
+timer = NodePath("Timer")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.60788, 0)
+shape = SubResource("CapsuleShape3D_7l8sa")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+target_desired_distance = 2.0
+path_height_offset = 1.8
+debug_enabled = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+visible = false
+mesh = SubResource("CapsuleMesh_w0upe")
+
+[node name="longArea" type="Area3D" parent="."]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="longArea"]
+transform = Transform3D(16, 0, 0, 0, -6.99382e-07, -16, 0, 16, -6.99382e-07, 0.0468903, 2.63296, -8.35503)
+shape = SubResource("ConvexPolygonShape3D_5xbhk")
+
+[node name="shortArea" type="Area3D" parent="."]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="shortArea"]
+transform = Transform3D(8, 0, 0, 0, -3.49691e-07, -8, 0, 8, -3.49691e-07, 0.0468903, 2.63296, -4.35726)
+shape = SubResource("ConvexPolygonShape3D_if2ib")
+
+[node name="noticeArea" type="Area3D" parent="."]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="noticeArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0470657, 2.22072, -1.1799)
+shape = SubResource("BoxShape3D_81trf")
+
+[node name="grabArea" type="Area3D" parent="."]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="grabArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.103516, 2.20953, -0.852082)
+shape = SubResource("BoxShape3D_wt6p7")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="tom2" parent="." instance=ExtResource("2_lgm0n")]
+unique_name_in_owner = true
+transform = Transform3D(0.35, 0, 0, 0, 0.35, 0, 0, 0, 0.35, 0, 0, 0)
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_urst0")
+unit_size = 5.0
+max_db = 6.0
+autoplay = true
+max_distance = 200.0
+panning_strength = 2.0
+bus = &"SFX"
+
+[connection signal="navigation_finished" from="NavigationAgent3D" to="." method="_on_navigation_agent_3d_navigation_finished"]
+[connection signal="body_entered" from="longArea" to="." method="_on_long_area_body_entered"]
+[connection signal="body_exited" from="longArea" to="." method="_on_long_area_body_exited"]
+[connection signal="body_entered" from="shortArea" to="." method="_on_short_area_body_entered"]
+[connection signal="body_exited" from="shortArea" to="." method="_on_short_area_body_exited"]
+[connection signal="body_entered" from="noticeArea" to="." method="_on_notice_area_body_entered"]
+[connection signal="body_exited" from="noticeArea" to="." method="_on_notice_area_body_exited"]
+[connection signal="body_entered" from="grabArea" to="." method="_on_grab_area_body_entered"]
+[connection signal="body_exited" from="grabArea" to="." method="_on_grab_area_body_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="finished" from="AudioStreamPlayer3D" to="." method="_on_audio_stream_player_3d_finished"]

@@ -1,0 +1,300 @@
+[gd_scene load_steps=46 format=3 uid="uid://cvci174l658y"]
+
+[ext_resource type="Script" path="res://scripts/texPhase2.gd" id="1_8sksm"]
+[ext_resource type="AudioStream" uid="uid://c6d7iv5ra74ku" path="res://audio/tex/texThompson 01.wav" id="2_4ajfy"]
+[ext_resource type="PackedScene" uid="uid://blpb287agqlh5" path="res://characters/texs_head.tscn" id="2_agcwj"]
+[ext_resource type="PackedScene" uid="uid://btrh2b5dxug8p" path="res://Assets/Texbody.glb" id="3_ssmpt"]
+[ext_resource type="AudioStream" uid="uid://cabwm2aj7lix" path="res://audio/tex/texThompson 02.wav" id="3_thpdk"]
+[ext_resource type="PackedScene" uid="uid://bduc433mi8don" path="res://Assets/officeChair.glb" id="4_387pn"]
+[ext_resource type="AudioStream" uid="uid://qe87qgk2vfrw" path="res://audio/tex/texThompson 03.wav" id="4_t7w01"]
+[ext_resource type="AudioStream" uid="uid://hhdu0e2lhaa5" path="res://audio/tex/texThompson 04.wav" id="5_24141"]
+[ext_resource type="AudioStream" uid="uid://bxqqpsiwk8p4g" path="res://audio/thompson/longburst.wav" id="5_kikin"]
+[ext_resource type="AudioStream" uid="uid://ch4kwhqvrq4r" path="res://audio/tex/texThompson 05.wav" id="6_cuddv"]
+[ext_resource type="AudioStream" uid="uid://d2tc773wq7vsu" path="res://audio/tex/texThompson 06.wav" id="7_52s57"]
+[ext_resource type="AudioStream" uid="uid://c4wosv0mf41qv" path="res://audio/tex/texThompson 07.wav" id="8_cxlha"]
+[ext_resource type="AudioStream" uid="uid://c0v6gpwkvs81c" path="res://audio/tex/texThompson 08.wav" id="9_2ygfd"]
+[ext_resource type="AudioStream" uid="uid://bjggrh651c3qu" path="res://audio/tex/texThompson 09.wav" id="10_62bek"]
+[ext_resource type="AudioStream" uid="uid://b7jq3a8r45ftt" path="res://audio/tex/texThompson 10.wav" id="11_t3cb8"]
+[ext_resource type="AudioStream" uid="uid://bbxv4qn74kv2c" path="res://audio/tex/texThompson 11.wav" id="12_02g85"]
+[ext_resource type="AudioStream" uid="uid://bvcy3uhyn2epv" path="res://audio/tex/texThompson 12.wav" id="13_ubnmd"]
+[ext_resource type="AudioStream" uid="uid://ygnlxpcdrtvb" path="res://audio/tex/texThompson 13.wav" id="14_ks36w"]
+[ext_resource type="AudioStream" uid="uid://d3ab7lejwm0ac" path="res://audio/tex/texThompson 14.wav" id="15_vo621"]
+[ext_resource type="AudioStream" uid="uid://cxuxd3epjih1d" path="res://audio/tex/texThompson 15.wav" id="16_vryps"]
+[ext_resource type="AudioStream" uid="uid://cmbm7fus56t5j" path="res://audio/tex/texThompson 16.wav" id="17_f2nnn"]
+[ext_resource type="AudioStream" uid="uid://djvq665hun1kt" path="res://audio/tex/texThompson 17.wav" id="18_c3e6x"]
+[ext_resource type="AudioStream" uid="uid://blgoas0y1pnnx" path="res://audio/tex/texThompson 18.wav" id="19_slxov"]
+[ext_resource type="AudioStream" uid="uid://vfgu5mlnrvsh" path="res://audio/tex/texThompson 19.wav" id="20_fup52"]
+[ext_resource type="AudioStream" uid="uid://chxsl5w0f0oq" path="res://audio/tex/texThompson 20.wav" id="21_ucn2w"]
+[ext_resource type="AudioStream" uid="uid://bxbjd5twnecyb" path="res://audio/tex/texThompson 21.wav" id="22_olrla"]
+[ext_resource type="AudioStream" uid="uid://cqly6m1w2fv0b" path="res://audio/tex/texThompson 22.wav" id="23_4i4n1"]
+[ext_resource type="AudioStream" uid="uid://bshtx1dy6bsxr" path="res://audio/tex/texThompson 23.wav" id="24_vt4cu"]
+[ext_resource type="AudioStream" uid="uid://28mm0rxxgq0r" path="res://audio/tex/texThompson 24.wav" id="25_j0o0h"]
+[ext_resource type="AudioStream" uid="uid://josrxqxncfrl" path="res://audio/tex/texThompson 25.wav" id="26_8wx4n"]
+[ext_resource type="AudioStream" uid="uid://bghgntxcfsf73" path="res://audio/tex/texThompson 26.wav" id="27_w63c7"]
+[ext_resource type="AudioStream" uid="uid://dgvs353mrtaf7" path="res://audio/tex/texThompson 27.wav" id="28_gtrf5"]
+[ext_resource type="AudioStream" uid="uid://cwh1lipiqq1c3" path="res://audio/tex/texThompson 28.wav" id="29_trnlc"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_58csg"]
+
+[sub_resource type="Animation" id="Animation_3cc2c"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("OmniLight3D:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GPUParticles3D:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("GPUParticles3D:emitting")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-1.15188, 5.49612, 2.58066)]
+}
+
+[sub_resource type="Animation" id="Animation_5ntgo"]
+resource_name = "fire"
+length = 0.1
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("OmniLight3D:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.01, 0.06),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GPUParticles3D:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.01, 0.1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("GPUParticles3D:emitting")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.01),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.01, 0.1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(-1.15188, 5.49612, 2.58066), Vector3(-1.152, 5.496, 2.481), Vector3(-1.15188, 5.49612, 2.58066)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_egiqi"]
+_data = {
+"RESET": SubResource("Animation_3cc2c"),
+"fire": SubResource("Animation_5ntgo")
+}
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_kn383"]
+angle_min = -75.0
+angle_max = 75.0
+direction = Vector3(0, 1, 0)
+initial_velocity_min = 0.05
+initial_velocity_max = 0.1
+gravity = Vector3(0, 0, 0)
+
+[sub_resource type="Gradient" id="Gradient_smxxp"]
+offsets = PackedFloat32Array(0.034965, 0.972028)
+colors = PackedColorArray(0.966146, 0.63592, 0.261664, 1, 0, 0, 0, 0.341176)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_s4t5g"]
+gradient = SubResource("Gradient_smxxp")
+fill = 2
+fill_from = Vector2(0.497908, 0.51046)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vm6p8"]
+transparency = 1
+albedo_texture = SubResource("GradientTexture2D_s4t5g")
+roughness = 0.0
+emission_enabled = true
+emission_energy_multiplier = 16.0
+emission_texture = SubResource("GradientTexture2D_s4t5g")
+billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_o4h2e"]
+material = SubResource("StandardMaterial3D_vm6p8")
+size = Vector2(0.15, 0.15)
+
+[sub_resource type="Animation" id="Animation_ftvxg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_vgb5v"]
+resource_name = "sweep"
+length = 4.0
+loop_mode = 2
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 2, 3.5, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 1.80399, 0), Vector3(0, 1.80399, 0), Vector3(0, 0, 0), Vector3(0, -1.79926, 0), Vector3(0, -1.79926, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qq7la"]
+_data = {
+"RESET": SubResource("Animation_ftvxg"),
+"sweep": SubResource("Animation_vgb5v")
+}
+
+[node name="CharacterBody3D" type="CharacterBody3D" node_paths=PackedStringArray("head", "gunAnim", "headAnima", "gunPlayer", "sweeperRay", "detectRay", "barksPlayer", "timer")]
+script = ExtResource("1_8sksm")
+head = NodePath("texsHead")
+gunAnim = NodePath("Texbody/smg/AnimationPlayer")
+headAnima = NodePath("headAnim")
+gunPlayer = NodePath("gun")
+sweeperRay = NodePath("sweepRayCast3D")
+detectRay = NodePath("texsHead/decect")
+barksPlayer = NodePath("barks")
+barksAudio = Array[AudioStreamWAV]([ExtResource("2_4ajfy"), ExtResource("3_thpdk"), ExtResource("4_t7w01"), ExtResource("5_24141"), ExtResource("6_cuddv"), ExtResource("7_52s57"), ExtResource("8_cxlha"), ExtResource("9_2ygfd"), ExtResource("10_62bek"), ExtResource("11_t3cb8"), ExtResource("12_02g85"), ExtResource("13_ubnmd"), ExtResource("14_ks36w"), ExtResource("15_vo621"), ExtResource("16_vryps"), ExtResource("17_f2nnn"), ExtResource("18_c3e6x"), ExtResource("19_slxov"), ExtResource("20_fup52"), ExtResource("21_ucn2w"), ExtResource("22_olrla"), ExtResource("23_4i4n1"), ExtResource("24_vt4cu"), ExtResource("25_j0o0h"), ExtResource("26_8wx4n"), ExtResource("27_w63c7"), ExtResource("28_gtrf5"), ExtResource("29_trnlc")])
+timer = NodePath("Timer")
+
+[node name="texsHead" parent="." instance=ExtResource("2_agcwj")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.167084, 4.11762, 0.261756)
+
+[node name="decect" type="RayCast3D" parent="texsHead"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -0.60841, -3.35594, 0.124784)
+target_position = Vector3(0, 0, -25)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.01377, 0)
+shape = SubResource("CapsuleShape3D_58csg")
+
+[node name="Texbody" parent="." instance=ExtResource("3_ssmpt")]
+transform = Transform3D(-0.5, 0, 4.37114e-08, 0, 0.5, 0, -4.37114e-08, 0, -0.5, 0, 0, 0)
+
+[node name="smg" parent="Texbody" index="0"]
+transform = Transform3D(0.423479, 0, -1.82201, 0, 1.87058, 0, 1.82201, 0, 0.423479, -1.15188, 5.49612, 2.58066)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Texbody/smg" index="0"]
+libraries = {
+"": SubResource("AnimationLibrary_egiqi")
+}
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Texbody/smg" index="1"]
+transform = Transform3D(1, 0, -6.96845e-08, 0, 1, 0, 6.96845e-08, 0, 1, 1.98943, 0.823776, -0.00155455)
+visible = false
+light_color = Color(0.966667, 1, 0, 1)
+omni_range = 9.25096
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="Texbody/smg" index="2"]
+transform = Transform3D(1, 0, 5.96046e-08, 0, 1, 0, -5.96046e-08, 0, 1, 2.01658, 0.823959, 0.00670213)
+visible = false
+emitting = false
+amount = 15
+lifetime = 0.02
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_kn383")
+draw_pass_1 = SubResource("QuadMesh_o4h2e")
+
+[node name="head" parent="Texbody" index="1"]
+visible = false
+
+[node name="officeChair" parent="." instance=ExtResource("4_387pn")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.130077, -0.0409691, 0.420432)
+
+[node name="sweepRayCast3D" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.148489, 3.49506, -3.10694)
+target_position = Vector3(0, 0, -1)
+
+[node name="headAnim" type="AnimationPlayer" parent="."]
+root_node = NodePath("../texsHead")
+libraries = {
+"": SubResource("AnimationLibrary_qq7la")
+}
+
+[node name="gun" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("5_kikin")
+bus = &"SFX"
+
+[node name="barks" type="AudioStreamPlayer3D" parent="."]
+bus = &"SFX"
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="playerVisible" from="texsHead" to="." method="_on_texs_head_player_visible"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+
+[editable path="Texbody"]

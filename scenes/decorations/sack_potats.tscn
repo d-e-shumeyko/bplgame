@@ -1,9 +1,12 @@
-[gd_scene load_steps=3 format=3 uid="uid://fycmds02tlkj"]
+[gd_scene load_steps=4 format=3 uid="uid://fycmds02tlkj"]
 
 [ext_resource type="PackedScene" uid="uid://djfjxwye4cep2" path="res://Assets/sackPotats.glb" id="1_m0vun"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_lp86i"]
 size = Vector3(1.88525, 3.90228, 0.759888)
+
+[sub_resource type="BoxOccluder3D" id="BoxOccluder3D_rrvcg"]
+size = Vector3(2.35843, 4.17656, 1)
 
 [node name="sackPotats" instance=ExtResource("1_m0vun")]
 transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0, 0)
@@ -13,3 +16,7 @@ transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0, 0)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0656738, 1.95792, -0.000305179)
 shape = SubResource("BoxShape3D_lp86i")
+
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="StaticBody3D" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.97345, 0)
+occluder = SubResource("BoxOccluder3D_rrvcg")

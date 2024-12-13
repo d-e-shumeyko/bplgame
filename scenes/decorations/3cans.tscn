@@ -1,0 +1,60 @@
+[gd_scene load_steps=6 format=3 uid="uid://cloe5r5cuahpg"]
+
+[ext_resource type="PackedScene" uid="uid://q605efe5o256" path="res://Assets/can.glb" id="1_0sqr4"]
+[ext_resource type="Script" path="res://scripts/3_cans.gd" id="1_fp6ur"]
+
+[sub_resource type="Animation" id="Animation_4irai"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_n47f2"]
+resource_name = "spin"
+length = 10.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, -6.26573, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_73g6k"]
+_data = {
+"RESET": SubResource("Animation_4irai"),
+"spin": SubResource("Animation_n47f2")
+}
+
+[node name="Node3D" type="Node3D" node_paths=PackedStringArray("anim")]
+script = ExtResource("1_fp6ur")
+anim = NodePath("AnimationPlayer")
+
+[node name="can" parent="." instance=ExtResource("1_0sqr4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.210098, 0, 0)
+
+[node name="can2" parent="." instance=ExtResource("1_0sqr4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.513128, 0)
+
+[node name="can3" parent="." instance=ExtResource("1_0sqr4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.195079, 0, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_73g6k")
+}

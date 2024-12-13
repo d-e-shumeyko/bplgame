@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://begbcowtqox7w"]
+
+[ext_resource type="MeshLibrary" uid="uid://b3rgs4o3fiira" path="res://Tilests/cellar.tres" id="1_bcuop"]
+
+[sub_resource type="Environment" id="Environment_i4ehv"]
+background_mode = 1
+background_color = Color(0.241156, 0.241156, 0.241156, 1)
+ambient_light_color = Color(0.288321, 0.00243096, 0.397427, 1)
+fog_enabled = true
+fog_light_color = Color(0.184939, 0.204334, 0.234825, 1)
+fog_light_energy = 0.5
+fog_density = 0.1
+
+[node name="Node3D" type="Node3D"]
+
+[node name="GridMap" type="GridMap" parent="."]
+mesh_library = ExtResource("1_bcuop")
+cell_size = Vector3(1, 1, 1)
+cell_center_y = false
+data = {
+"cells": PackedInt32Array(0, 65533, 2, 1, 65533, 2, 2, 65534, 1441794, 2, 65535, 1441794, 2, 0, 1441794, 2, 1, 1441794, 1, 2, 655362, 0, 2, 655362, 65535, 2, 655362, 65534, 2, 655362, 65533, 1, 1048578, 65533, 0, 1048578, 65533, 65535, 1048578, 65533, 65534, 1048578, 65534, 65533, 2, 65535, 65533, 2, 2, 65533, 0, 2, 2, 1441792, 65533, 2, 655360, 65533, 65533, 1048576, 65534, 1, 1048577, 65534, 0, 1048577, 65534, 65535, 1048577, 65534, 65534, 1048577, 65535, 65534, 1048577, 0, 65534, 1048577, 1, 65534, 1048577, 1, 65535, 1048577, 1, 0, 1048577, 1, 1, 1048577, 0, 1, 1048577, 65535, 1, 1048577, 65535, 0, 1048577, 0, 0, 1048577, 0, 65535, 1048577, 65535, 65535, 1048577)
+}
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_i4ehv")
